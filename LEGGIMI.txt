@@ -1,0 +1,7 @@
+VIDEO
+Metti i tuoi video dentro la cartella assets/reels con questi nomi esatti:
+  reel-1.MOV ... reel-7.MOV   (i 7 video della sezione Content Creation)
+  phone-reel.MOV              (il video dentro il telefono 3D)
+Vanno bene anche .mov / .mp4 (minuscolo o maiuscolo). Niente anteprime JPG: si usano solo i video.
+Se il video nel telefono 3D resta fermo, apri il sito da un server locale:
+  cd cartella-del-sito && python3 -m http.server 8000   poi   http://localhost:8000
