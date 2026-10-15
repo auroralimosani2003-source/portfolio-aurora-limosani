@@ -1,0 +1,1877 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Golden Goose, Three Ideas</title>
+<meta name="description" content="What if Golden Goose asked me to make Co-Creation go viral? A design-led campaign concept by Aurora Limosani.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,400..800&family=Oswald:wght@400..700&family=Permanent+Marker&family=Special+Elite&display=swap">
+<style>
+/* Design read: campaign concept for a fashion brand built on intentional imperfection.
+   Worn canvas ground, ink, one kintsugi gold. Wide-and-heavy Archivo for athletic vintage type,
+   a marker hand for the Dream Maker's annotations. The 3D sneaker is the hero, the canvas and the tool. */
+:root{
+  --canvas:#ECE8E0;
+  --paper:#F7F5F0;
+  --ink:#151413;
+  --ink-2:#4A4743;
+  --gold:#F2B300;
+  --gold-deep:#7A4F00;
+  --line:rgba(21,20,19,.14);
+  --cond:"Oswald","Arial Narrow",sans-serif;
+  --font:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --hand:"Permanent Marker","Marker Felt","Comic Sans MS",cursive;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+  --ease-io:cubic-bezier(0.77,0,0.175,1);
+  --r:18px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1320px,100% - 40px);margin-inline:auto}
+:focus-visible{outline:2px solid var(--ink);outline-offset:4px;border-radius:6px}
+.display{font-family:var(--cond);font-weight:600;letter-spacing:.005em;line-height:.92;text-transform:uppercase}
+.hand{font-family:var(--hand);font-weight:400;letter-spacing:0;text-transform:none}
+/* worn-canvas grain, fixed so it never repaints with scroll */
+.grain{position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.22;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.28 0 0 0 0 0.25 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;font:700 15px/1 var(--font);font-stretch:110%;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:transform 160ms var(--ease-out),background-color .25s ease,color .25s ease}
+.btn:active{transform:scale(.97)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.btn-ink:hover{background:#000}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px currentColor}
+.btn-line:hover{background:rgba(21,20,19,.06)}
+
+/* Nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:calc(env(safe-area-inset-top,0px) + 12px);pointer-events:none}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px;padding:0 8px 0 22px;border-radius:999px;background:rgba(247,245,240,.78);-webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);box-shadow:0 0 0 1px var(--line),0 10px 30px rgba(0,0,0,.06);pointer-events:auto;transition:transform .45s var(--ease-out)}
+.nav.hide .nav-in{transform:translateY(calc(-100% - 20px))}
+.mark{display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap}
+.mark b{font-family:var(--cond);font-weight:600;font-size:16px;letter-spacing:.02em;text-transform:uppercase}
+.mark span{font-family:var(--hand);font-size:14px;color:var(--gold-deep)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-links{display:flex;gap:2px;font-size:13px;font-weight:600;letter-spacing:.03em;text-transform:uppercase}
+.nav-links a{text-decoration:none;padding:9px 12px;border-radius:999px;opacity:.8;transition:opacity .2s ease,background-color .2s ease}
+.nav-links a:hover{opacity:1;background:rgba(21,20,19,.06)}
+.lang{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:rgba(21,20,19,.07)}
+.lang button{height:36px;min-width:44px;padding:0 10px;border:0;border-radius:999px;background:transparent;color:var(--ink);font:800 13px/1 var(--font);letter-spacing:.04em;cursor:pointer;opacity:.55;transition:background-color .25s ease,color .25s ease,opacity .25s ease,transform 160ms var(--ease-out)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper);opacity:1}
+.lang button:active{transform:scale(.95)}
+@media (max-width:900px){.nav-links{display:none}.mark span{display:none}.nav-in{padding:0 6px 0 20px}}
+@media (prefers-reduced-transparency:reduce){.nav-in{background:var(--paper)}}
+
+/* STORY: one sticky stage. Hero, anatomy and kintsugi happen on the same shoe. */
+.story{position:relative;height:420vh}
+.stage{position:sticky;top:0;height:100dvh;overflow:hidden}
+#storyCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+#storyCanvas:active{cursor:grabbing}
+.panel{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;transition:opacity .5s var(--ease-out),transform .6s var(--ease-out)}
+.panel .wrap{pointer-events:none}
+.panel .wrap > *{pointer-events:auto}
+.panel.off{opacity:0;transform:translateY(16px)}
+.panel.off .wrap > *{pointer-events:none}
+.hero-copy{max-width:min(620px,52%)}
+.hero-copy h1{font-size:clamp(40px,5.2vw,84px);margin:0}
+.hero-copy h1 em{font-style:normal;color:var(--gold-deep)}
+.hero-copy p{font-size:clamp(17px,1.5vw,20px);margin:22px 0 0;max-width:36ch;color:var(--ink-2)}
+.hero-copy .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.note{position:absolute;font-family:var(--hand);font-size:clamp(18px,1.8vw,26px);line-height:1.1;color:var(--ink);transform:rotate(-4deg)}
+.note-gold{color:var(--gold-deep)}
+.tape{position:absolute;width:120px;height:30px;background:rgba(190,184,170,.62);box-shadow:0 1px 0 rgba(0,0,0,.05);transform:rotate(-8deg)}
+.panel-anatomy{align-items:flex-start;padding-top:110px}
+.panel-anatomy h2,.panel-gold h2{font-size:clamp(36px,5vw,78px);margin:0;max-width:12ch}
+.panel-anatomy p,.panel-gold p{margin:16px 0 0;max-width:34ch;color:var(--ink-2);font-size:18px}
+.panel-gold{align-items:flex-end;padding-bottom:9vh}
+.panel-gold .wrap{display:flex;justify-content:flex-end}
+.panel-gold .wrap > div{text-align:right}
+.panel-gold h2{margin-left:auto}
+.panel-gold p{margin-left:auto}
+.labels{position:absolute;inset:0;pointer-events:none}
+.lab{position:absolute;left:0;top:0;font-family:var(--hand);font-size:clamp(16px,1.5vw,22px);white-space:nowrap;transform:translate(-50%,-50%);opacity:0;transition:opacity .4s ease}
+.lab::before{content:"";position:absolute;left:50%;top:calc(100% + 2px);width:1.5px;height:26px;background:currentColor;opacity:.5}
+.lab.on{opacity:1}
+.scrub{position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold);transform-origin:left;transform:scaleX(var(--p,0))}
+@media (max-width:820px){
+  .hero-copy{max-width:100%;padding-top:96px}
+  .panel-hero{align-items:flex-start}
+  .panel-anatomy{padding-top:96px}
+  .panel-gold{padding-bottom:5vh}
+  .note,.tape{display:none}
+}
+
+/* Sections */
+.heritage h2 em{font-style:normal;color:var(--gold-deep)}
+.years{list-style:none;margin:clamp(40px,5vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.years li{border-top:1.5px solid var(--ink);padding-top:16px;display:flex;flex-direction:column;gap:10px;font-size:16px;color:var(--ink-2)}
+.years b{font-family:var(--cond);font-weight:600;font-size:clamp(40px,4vw,60px);line-height:1;color:var(--ink);text-transform:uppercase}
+@media (max-width:820px){.years{grid-template-columns:1fr;gap:28px}}
+.sec{padding-block:clamp(90px,11vw,160px);position:relative}
+.sec h2{font-size:clamp(40px,6vw,96px);margin:0;max-width:16ch}
+.lead{font-size:clamp(18px,1.5vw,21px);max-width:54ch;margin:22px 0 0;color:var(--ink-2)}
+
+/* STUDIO */
+.studio{background:var(--paper)}
+.studio-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:44px;align-items:start}
+.studio-stage{position:sticky;top:90px;aspect-ratio:5/4;border-radius:var(--r);background:radial-gradient(120% 90% at 50% 40%,#fff 0,var(--canvas) 70%);box-shadow:0 0 0 1px var(--line);overflow:hidden}
+.studio-stage canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+.studio-stage canvas:active{cursor:grabbing}
+.studio-stage .hint{position:absolute;left:18px;bottom:14px;font-family:var(--hand);font-size:18px;color:var(--ink-2)}
+.tools{display:grid;gap:26px}
+.tool h3{margin:0 0 12px;font-size:14px;font-weight:800;font-stretch:115%;letter-spacing:.08em;text-transform:uppercase}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;background:var(--c);box-shadow:inset 0 0 0 1px rgba(0,0,0,.12);position:relative;transition:transform 160ms var(--ease-out)}
+.sw:active{transform:scale(.92)}
+.sw[aria-pressed="true"]::after{content:"";position:absolute;inset:-5px;border-radius:50%;box-shadow:0 0 0 2px var(--ink)}
+.sw.glitter{background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.7) 0 6%,transparent 7%),radial-gradient(circle at 70% 60%,rgba(255,255,255,.55) 0 5%,transparent 6%),radial-gradient(circle at 45% 75%,rgba(255,255,255,.5) 0 4%,transparent 5%),var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{height:44px;padding:0 18px;border-radius:999px;border:0;cursor:pointer;background:var(--canvas);color:var(--ink);font:700 14px/1 var(--font);letter-spacing:.02em;box-shadow:inset 0 0 0 1px var(--line);transition:transform 160ms var(--ease-out),background-color .2s ease,color .2s ease}
+.chip:active{transform:scale(.96)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.range{width:100%;accent-color:var(--ink);height:28px}
+.range-labels{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2)}
+.field{display:grid;gap:8px}
+.field label{font-size:14px;font-weight:800;font-stretch:115%;letter-spacing:.08em;text-transform:uppercase}
+.field input{height:54px;border-radius:12px;border:1.5px solid var(--ink);background:#fff;padding:0 16px;font:400 22px/1 var(--hand);color:var(--ink)}
+.field input::placeholder{color:#7a766f}
+.field small{font-size:13px;color:var(--ink-2)}
+.tools .btn{justify-self:start}
+@media (max-width:900px){.studio-grid{grid-template-columns:1fr}.studio-stage{position:relative;top:auto}}
+
+/* ===== CAMPAIGNS: shared ===== */
+.mono{font-family:"Special Elite","Courier New",monospace;letter-spacing:.01em}
+.kicker{display:inline-block;padding:8px 16px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:800;font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.blk-h{display:flex;align-items:center;gap:12px;margin:0 0 18px;font:800 13px/1.2 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+.blk-h::before{content:"";width:28px;height:2px;background:currentColor;flex:none}
+.camp{position:relative;padding-block:clamp(90px,10vw,150px) clamp(60px,7vw,110px)}
+.c-head{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(18px,3vw,48px);align-items:end;margin-bottom:clamp(56px,7vw,110px)}
+.c-num{font-family:var(--cond);font-weight:700;font-size:clamp(120px,22vw,340px);line-height:.78;color:transparent;-webkit-text-stroke:2px var(--ink);letter-spacing:-.02em}
+.c-label{display:block;font:800 13px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;color:var(--ink-2)}
+.c-title{font-size:clamp(48px,8.4vw,150px);margin:0;max-width:none}
+.c-title em{font-style:normal;color:var(--gold-deep)}
+.c-q{font-size:clamp(22px,2.6vw,38px);line-height:1.2;margin:22px 0 0;max-width:30ch}
+.c-q.hand{transform:rotate(-1.5deg);transform-origin:left}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);margin-bottom:clamp(64px,8vw,120px);align-items:start}
+.block p{margin:0 0 16px;font-size:17px;line-height:1.65;color:var(--ink-2);max-width:60ch}
+.pull{font-family:var(--hand);font-size:clamp(24px,2.4vw,32px)!important;line-height:1.2!important;color:var(--ink)!important;margin-top:26px!important;transform:rotate(-1.5deg);transform-origin:left}
+.poll{display:grid;gap:8px;margin:0 0 24px}
+.poll span{font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:clamp(26px,2.6vw,40px);line-height:1.05}
+.poll-old{color:rgba(21,20,19,.4);background:linear-gradient(var(--gold),var(--gold)) no-repeat 0 55%/0 4px;transition:background-size .9s var(--ease-out) .3s}
+.in .poll-old,.poll-old.in{background-size:100% 4px}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{position:relative;padding-left:30px;font-size:16px;line-height:1.5;color:var(--ink-2)}
+.ticks li::before{content:"";position:absolute;left:0;top:3px;width:16px;height:16px;background:var(--gold);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.hashtag{display:inline-block;align-self:flex-start;margin-top:6px;padding:9px 16px;border-radius:999px;background:var(--ink);color:var(--gold);font-weight:800;font-size:15px;letter-spacing:.02em}
+.fine{font-size:13px;color:var(--ink-2);margin:14px 0 clamp(64px,8vw,110px)}
+.kpis{margin-bottom:clamp(64px,8vw,110px)}
+.kpis dl{margin:0;display:grid}
+.kpis dl > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;padding:18px 0;border-top:1.5px solid var(--ink);align-items:baseline}
+.kpis dl > div:last-child{border-bottom:1.5px solid var(--ink)}
+.two .kpis dl > div{grid-template-columns:1fr;gap:4px}
+.two .kpis dt{font-size:clamp(26px,2.4vw,36px)}
+.kpis dt{font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:clamp(28px,3.4vw,52px);line-height:1}
+.kpis dd{margin:0;font-size:16px;color:var(--ink-2)}
+.rules{margin-bottom:clamp(64px,8vw,110px)}
+.rule-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:r}
+.rule-grid p{margin:0;padding-top:16px;border-top:1.5px solid var(--ink);font-size:15px;line-height:1.55;color:var(--ink-2);counter-increment:r}
+.rule-grid p::before{content:counter(r,decimal-leading-zero);display:block;font-family:var(--cond);font-weight:600;font-size:34px;line-height:1;color:var(--ink);margin-bottom:10px}
+.why{margin:0;padding:clamp(28px,4vw,56px);border-radius:var(--r);background:var(--ink);color:var(--paper);position:relative;overflow:hidden}
+.why .blk-h{color:var(--gold)}
+.why p{margin:0;font-size:clamp(20px,2vw,28px);font-weight:500;line-height:1.4;max-width:46ch}
+.why::after{content:"";position:absolute;right:-40px;bottom:-40px;width:220px;height:220px;background:var(--gold);opacity:.14;clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.eco{margin-bottom:clamp(64px,8vw,120px)}
+.strip{list-style:none;margin:0;padding:34px 18px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;background:var(--ink);border-radius:var(--r);position:relative;
+  background-image:radial-gradient(circle,var(--canvas) 0 4px,transparent 5px),radial-gradient(circle,var(--canvas) 0 4px,transparent 5px);background-size:26px 26px;background-repeat:repeat-x;background-position:6px 9px,6px calc(100% - 9px)}
+.strip-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.strip li{background:#1F1D1B;border-radius:10px;padding:18px 16px;display:flex;flex-direction:column;gap:8px;color:var(--paper);min-height:200px;opacity:0;transform:translateY(18px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out),background-color .3s ease}
+.strip.in li{opacity:1;transform:none}
+.strip li:hover{background:#2a2724}
+.strip b{font-family:var(--cond);font-weight:600;font-size:30px;line-height:1;color:var(--gold)}
+.strip strong{font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:18px;line-height:1.1;overflow-wrap:anywhere}
+.strip span{font-size:14px;line-height:1.45;color:rgba(247,245,240,.72)}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.people li{display:grid;grid-template-columns:52px minmax(0,1fr);column-gap:16px;align-items:center;padding:18px 20px;border-radius:var(--r);background:#fff;box-shadow:0 0 0 1px var(--line),0 12px 30px -18px rgba(0,0,0,.25);transition:transform .4s var(--ease-out)}
+.people li:hover{transform:translateX(8px)}
+.p-ico{grid-row:span 2;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--gold);font-size:22px}
+.people b{font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:24px;line-height:1.05}
+.people span:not(.p-ico){font-size:15px;color:var(--ink-2)}
+@media (max-width:900px){
+  .two{grid-template-columns:1fr}
+  .c-head{grid-template-columns:1fr}
+  .c-num{font-size:clamp(110px,34vw,200px)}
+  .strip,.strip-4{grid-template-columns:1fr;padding:30px 30px}
+  .strip li{min-height:0}
+  .rule-grid{grid-template-columns:1fr 1fr}
+  .kpis dl > div{grid-template-columns:1fr;gap:6px}
+}
+@media (max-width:560px){.rule-grid{grid-template-columns:1fr}}
+
+/* ===== INDEX ===== */
+.index{background:var(--ink);color:var(--paper);overflow-x:clip}
+.index h2{font-size:clamp(44px,7vw,120px);max-width:14ch}
+.index h2 em{font-style:normal;color:var(--gold)}
+.index .lead{color:rgba(247,245,240,.78)}
+.files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:clamp(44px,5vw,72px);perspective:1200px}
+.file{position:relative;display:flex;flex-direction:column;gap:12px;padding:26px;border-radius:22px;background:var(--paper);color:var(--ink);text-decoration:none;min-height:430px;transform-style:preserve-3d;transition:transform .5s var(--ease-out),box-shadow .5s var(--ease-out);box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.file-dark{background:#1F1D1B;color:var(--paper);box-shadow:inset 0 0 0 1px rgba(247,245,240,.1),0 30px 60px -30px rgba(0,0,0,.6)}
+.file-beige{background:#E4DACB}
+.file-tab{font-family:var(--cond);font-weight:600;font-size:15px;letter-spacing:.1em;align-self:flex-start;padding:7px 12px;border-radius:999px;background:var(--gold);color:var(--ink);transform:translateZ(30px)}
+.file-vis{flex:1;display:grid;place-items:center;min-height:170px;transform:translateZ(50px);position:relative}
+.file b{font-size:clamp(28px,2.6vw,40px);line-height:.98;transform:translateZ(40px)}
+.file-hook{font-size:19px;transform:translateZ(30px)}
+.file-hook.hand{font-size:22px}
+.file-sub{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.65}
+.vis-c1 svg{width:88%;color:transparent}
+.vis-c1 use{stroke:var(--ink);stroke-width:2.2;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 1.8s var(--ease-io)}
+.file.in .vis-c1 use{stroke-dashoffset:0}
+.vis-c2 svg{width:84%;color:#6d665c}
+.tag-ev{position:absolute;right:6%;top:4%;padding:10px 12px 10px 22px;background:#CDB78B;color:var(--ink);font:700 12px/1.2 "Special Elite","Courier New",monospace;transform:rotate(8deg);clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%);transition:transform .5s var(--ease-out)}
+.file:hover .tag-ev{transform:rotate(-4deg) translateY(-6px)}
+.vis-c3{display:grid;grid-template-columns:repeat(3,52px);gap:8px;place-content:center}
+.vis-c3 i{width:52px;height:52px;border-radius:8px;background:#F6F1E9;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);transition:transform .6s var(--ease-out),background-color .4s ease}
+.file:hover .vis-c3 i:nth-child(1){transform:rotate(-18deg) translate(-14px,-10px);background:var(--ink)}
+.file:hover .vis-c3 i:nth-child(2){transform:rotate(12deg) translateY(-18px)}
+.file:hover .vis-c3 i:nth-child(3){transform:rotate(26deg) translate(16px,6px);background:var(--gold)}
+.file:hover .vis-c3 i:nth-child(4){transform:rotate(-8deg) translate(-20px,12px)}
+.file:hover .vis-c3 i:nth-child(5){transform:rotate(30deg) scale(1.1);background:var(--ink)}
+.file:hover .vis-c3 i:nth-child(6){transform:rotate(-24deg) translate(18px,16px)}
+@media (max-width:900px){.files{grid-template-columns:1fr}.file{min-height:360px}}
+
+/* ===== CAMPAIGN 01: the atelier ===== */
+.c1{overflow-x:clip;background-color:var(--paper);background-image:linear-gradient(rgba(21,20,19,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(21,20,19,.045) 1px,transparent 1px);background-size:32px 32px}
+.mech{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);margin-bottom:clamp(64px,8vw,120px);width:min(1320px,100% - 40px);margin-inline:auto;gap:clamp(24px,4vw,64px)}
+.mech-stage{position:sticky;top:0;height:100vh;height:100dvh;grid-column:2;grid-row:1}
+.mech-stage canvas{position:absolute;inset:8vh 0;width:100%;height:84%;touch-action:pan-y}
+.mech-steps{grid-column:1;grid-row:1;list-style:none;margin:0;padding:0}
+.step{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:.22;transition:opacity .5s ease}
+.step.on{opacity:1}
+.step h3{font-size:clamp(38px,4.4vw,70px);margin:0}
+.step p{margin:0;font-size:17px;line-height:1.65;color:var(--ink-2);max-width:52ch}
+.step-n{font:800 13px/1 var(--font);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep)}
+.mech-hud{position:absolute;inset:0;pointer-events:none}
+.hud{position:absolute;opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease-out),transform .5s var(--ease-out)}
+.hud.on{opacity:1;transform:none}
+.hud-1{left:6%;top:16%;font-size:clamp(24px,2.4vw,34px);transform:rotate(-5deg)}
+.hud-1.on{transform:rotate(-5deg)}
+.hud-2{left:0;right:0;bottom:12%;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.chip-f{padding:10px 16px;border-radius:999px;background:var(--ink);color:var(--paper);font-weight:700;font-size:14px}
+.chip-f:nth-child(2){background:var(--gold);color:var(--ink)}
+.chip-f:nth-child(3){background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hud-3{right:0;top:12%;display:grid;gap:8px}
+.entry{display:flex;justify-content:space-between;gap:18px;min-width:220px;padding:12px 16px;border-radius:14px;background:#fff;box-shadow:0 10px 30px -14px rgba(0,0,0,.3);font-size:14px}
+.entry i{font-style:normal;font-weight:800;font-variant-numeric:tabular-nums}
+.entry i::after{content:" ♥";color:var(--gold-deep)}
+.hud-4{left:8%;right:8%;bottom:10%}
+.vote{display:flex;gap:6px;height:84px}
+.vote span{border-radius:14px;padding:10px 14px;display:flex;flex-direction:column;justify-content:flex-end;transition:flex-grow 1.2s var(--ease-io)}
+.vote-a{flex:1 1 0;background:var(--ink);color:var(--gold)}
+.vote-b{flex:1 1 0;background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hud-4.on .vote-a{flex-grow:70}.hud-4.on .vote-b{flex-grow:30}
+.vote b{font-family:var(--cond);font-weight:600;font-size:34px;line-height:1}
+.vote i{font-style:normal;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.hud-5{right:4%;top:14%;font-size:clamp(28px,3vw,44px);color:var(--gold-deep);transform:rotate(-6deg)}
+.hud-5.on{transform:rotate(-6deg)}
+.mech-progress{position:absolute;left:0;right:0;bottom:5vh;height:2px;background:var(--line)}
+.mech-progress i{display:block;height:100%;background:var(--ink);transform-origin:left;transform:scaleX(var(--p,0))}
+@media (max-width:900px){
+  .mech{grid-template-columns:1fr;gap:0}
+  .mech-stage{grid-column:1;height:56vh;top:0;z-index:1}
+  .mech-stage canvas{inset:4vh 0 0;height:calc(100% - 4vh)}
+  .mech-steps{grid-column:1;grid-row:2;position:relative;z-index:2}
+  .step{min-height:0;margin:0 0 50vh;padding:22px;border-radius:var(--r);background:rgba(247,245,240,.96);box-shadow:0 0 0 1px var(--line),0 20px 40px -20px rgba(0,0,0,.3);opacity:1}
+  .hud-3{top:6%;right:4%}
+  .entry{min-width:170px;padding:8px 12px;font-size:12px}
+  .hud-2{bottom:2%}
+  .hud-4{bottom:2%}
+}
+
+/* ===== CAMPAIGN 02: the interrogation room ===== */
+.c2{background:#100F0E;color:var(--paper);padding-top:0;overflow:hidden}
+.c2 .blk-h{color:#CDB78B}
+.c2 .block p{color:rgba(247,245,240,.76)}
+.c2 .pull{color:var(--gold)!important}
+.c2-hero{position:relative;height:100vh;height:100dvh;min-height:620px;margin-bottom:clamp(60px,8vw,110px)}
+.lineup{position:absolute;inset:0 0 auto 0;height:100vh;height:100dvh;min-height:620px;pointer-events:none;opacity:.55;
+  background-image:repeating-linear-gradient(to bottom,rgba(247,245,240,.16) 0 1px,transparent 1px 48px)}
+.lineup span{position:absolute;left:2.5vw;font:700 12px/1 "Special Elite","Courier New",monospace;color:rgba(247,245,240,.4);transform:translateY(-50%)}
+.lineup span.r{left:auto;right:2.5vw}
+#c2Canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.c2-hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 55% at 50% 42%,transparent 0,rgba(16,15,14,.15) 55%,rgba(16,15,14,.85) 100%)}
+.c2-hero-in{position:absolute;left:0;right:0;bottom:clamp(36px,7vh,80px);z-index:2;pointer-events:none}
+.c2 .c-label{color:#CDB78B}
+.c2 .c-title{color:var(--paper)}
+.c2 .c-title em{color:var(--gold)}
+.type{font-size:clamp(22px,2.4vw,34px);margin:18px 0 0;color:var(--paper);display:inline-block;clip-path:inset(0 100% 0 0);animation:none}
+.type.go{animation:typeon 2.4s steps(28,end) .3s forwards}
+.type::after{content:"";display:inline-block;width:.55em;height:1em;margin-left:4px;vertical-align:-2px;background:var(--gold);animation:blink 1s steps(1) infinite}
+@keyframes typeon{to{clip-path:inset(0 0 0 0)}}
+@keyframes blink{50%{opacity:0}}
+.c2-sub{margin:10px 0 0;font-size:clamp(17px,1.5vw,21px);color:rgba(247,245,240,.75)}
+.placard{position:absolute;right:max(20px,(100vw - 1320px)/2);bottom:0;padding:12px 16px;background:#E9E2D2;color:var(--ink);font-size:14px;letter-spacing:.06em;transform:rotate(-2deg)}
+.transcript{display:grid;gap:18px;margin-bottom:clamp(56px,7vw,100px)}
+.tr{position:relative;padding:clamp(24px,3vw,40px);padding-left:clamp(28px,4vw,60px);border-radius:var(--r);background:#1A1917;box-shadow:inset 0 0 0 1px rgba(247,245,240,.08)}
+.tr::before{content:"";position:absolute;left:clamp(12px,1.6vw,26px);top:28px;bottom:28px;width:2px;background:repeating-linear-gradient(to bottom,#CDB78B 0 8px,transparent 8px 14px)}
+.tr-h{display:block;color:#CDB78B;font-size:15px;margin-bottom:16px}
+.tr p{margin:0 0 14px;color:rgba(247,245,240,.8);max-width:72ch;line-height:1.65}
+.tr-line{font-size:clamp(26px,3vw,44px)!important;color:var(--paper)!important;line-height:1.1!important;margin:18px 0 22px!important}
+.exhibits{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.exhibits li{position:relative;padding:18px 16px 16px 26px;background:#CDB78B;color:var(--ink);clip-path:polygon(16px 0,100% 0,100% 100%,16px 100%,0 50%);display:grid;gap:6px;transition:transform .4s var(--ease-out)}
+.exhibits li:nth-child(odd){transform:rotate(-1.2deg)}.exhibits li:nth-child(even){transform:rotate(1.4deg)}
+.exhibits li:hover{transform:rotate(0) translateY(-4px)}
+.exhibits b{font:700 13px/1 "Special Elite","Courier New",monospace;letter-spacing:.06em;text-transform:uppercase}
+.exhibits span{font-size:15px;line-height:1.35}
+.hashtag-dark{background:var(--gold);color:var(--ink)}
+.cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;perspective:1200px}
+.case{position:relative;padding:22px 22px 72px;border-radius:6px 22px 22px 22px;background:#D6C49C;color:var(--ink);transform-style:preserve-3d;transition:transform .5s var(--ease-out);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.case::before{content:"";position:absolute;left:0;top:-14px;width:42%;height:16px;background:#D6C49C;border-radius:8px 8px 0 0}
+.case-photo{position:relative;border-radius:6px;background:#1C1B19;padding:26px 18px 12px;margin-bottom:16px;box-shadow:inset 0 0 0 6px #EFE9DC;transform:translateZ(30px) rotate(-1.5deg)}
+.case-photo svg{width:100%;color:#BFB6A6}
+.marker{position:absolute;width:26px;height:22px;display:grid;place-items:end center;padding-bottom:2px;background:var(--gold);color:var(--ink);font:800 12px/1 var(--font);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.case-no{font-size:13px;letter-spacing:.08em}
+.case h4{font-size:clamp(26px,2.4vw,36px);margin:6px 0 10px}
+.conf{margin:0;font-size:16px;line-height:1.4}
+.stamp{position:absolute;right:16px;bottom:18px;padding:8px 12px;border:3px solid #A3271F;color:#A3271F;font:800 13px/1 var(--font);letter-spacing:.1em;text-transform:uppercase;border-radius:4px;opacity:0;transform:rotate(-10deg) scale(2.2);transition:opacity .25s ease .6s,transform .45s cubic-bezier(.2,1.6,.4,1) .6s;mix-blend-mode:multiply}
+.case.in .stamp{opacity:.92;transform:rotate(-10deg) scale(1)}
+.c2 .fine{color:rgba(247,245,240,.5)}
+.suspects{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:s}
+.suspects li{counter-increment:s;display:flex;align-items:center;gap:16px;padding:16px 20px;background:#1A1917;border-radius:12px;font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:clamp(22px,2.2vw,30px);box-shadow:inset 0 0 0 1px rgba(247,245,240,.08);transition:background-color .3s ease,transform .4s var(--ease-out)}
+.suspects li::before{content:counter(s,decimal-leading-zero);font:700 13px/1 "Special Elite","Courier New",monospace;padding:8px 10px;background:#E9E2D2;color:var(--ink)}
+.suspects li:hover{background:#24221F;transform:translateX(8px)}
+.flow{margin-bottom:clamp(64px,8vw,110px)}
+.flow ol{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.flow ol::before{content:"";position:absolute;left:4%;right:4%;top:22px;height:2px;background:var(--gold);transform-origin:left;transform:scaleX(0);transition:transform 1.4s var(--ease-io) .2s}
+.flow.in ol::before{transform:scaleX(1)}
+.flow li{position:relative;display:grid;gap:6px;padding-top:58px}
+.flow li::before{content:"";position:absolute;top:10px;left:0;width:26px;height:26px;border-radius:50%;background:#100F0E;box-shadow:inset 0 0 0 2px var(--gold)}
+.flow li:last-child::before{background:var(--gold)}
+.flow b{font-family:var(--cond);text-transform:uppercase;font-weight:600;font-size:26px;line-height:1}
+.flow span{font-size:15px;color:rgba(247,245,240,.7)}
+.flow > p{margin:0;max-width:62ch;color:rgba(247,245,240,.8)}
+.c2 .ticks li{color:rgba(247,245,240,.8)}
+.kpis-dark dl > div{border-color:rgba(247,245,240,.5)!important}
+.kpis-dark dd{color:rgba(247,245,240,.72)}
+.kpis-dark{margin-bottom:0}
+.c2 .why{background:#1A1917;box-shadow:inset 0 0 0 1px rgba(205,183,139,.3)}
+@media (max-width:900px){
+  .exhibits{grid-template-columns:1fr 1fr}
+  .cases{grid-template-columns:1fr}
+  .flow ol{grid-template-columns:1fr;gap:18px}
+  .flow ol::before{left:12px;right:auto;top:0;bottom:0;width:2px;height:auto;transform-origin:top;transform:scaleY(0)}
+  .flow.in ol::before{transform:scaleY(1)}
+  .flow li{padding:0 0 0 46px}
+  .flow li::before{top:0}
+  .lineup span{display:none}
+  .placard{position:relative;right:auto;bottom:auto;display:inline-block;margin-top:16px}
+}
+
+/* ===== CAMPAIGN 03: clean -> real ===== */
+.clean-ui{position:absolute;inset:120px 22px 22px;display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:min-content;gap:12px;transition:opacity .4s ease}
+.film:not(.s0) .clean-ui{opacity:0}
+.cu-cup{grid-column:span 2;height:110px;border-radius:16px;background:radial-gradient(circle at 50% 55%,#C9CDAE 0 26%,#F7F2EA 27% 36%,transparent 37%),#E4DACB}
+.cu-l{grid-column:span 2;height:10px;border-radius:6px;background:#DCD1C1}
+.cu-l.s{width:60%}
+.cu-card{height:96px;border-radius:14px;background:#E4DACB}
+.cu-card.b{background:#F7F2EA;box-shadow:inset 0 0 0 1px #DCD1C1}
+.c3{overflow-x:clip;background:#EDE6DC;transition:background-color .8s ease}
+.c3 .c-num{-webkit-text-stroke-color:#B9AC9A}
+.c3 .c-title{font-weight:400;letter-spacing:.02em}
+.c3 .c-title em{font-weight:700;color:var(--ink);background:var(--gold);padding:0 .12em;display:inline-block;transform:rotate(-2deg)}
+.film{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);width:min(1320px,100% - 40px);margin:0 auto clamp(64px,8vw,120px);gap:clamp(24px,4vw,64px)}
+.film-stage{position:sticky;top:0;height:100vh;height:100dvh;grid-column:1;grid-row:1;perspective:1100px;display:grid;place-items:center}
+.film-stage::before{content:"";position:absolute;inset:6vh -20px;border-radius:28px;background:#E3DACC;transition:background-color .6s ease}
+.film.s1 .film-stage::before,.film.s2 .film-stage::before{background:var(--ink)}
+.film.s3 .film-stage::before{background:#1F1D1B}
+.film-steps{grid-column:2;grid-row:1;list-style:none;margin:0;padding:0}
+.fstep{min-height:100vh;display:flex;flex-direction:column;justify-content:center;gap:14px;opacity:.22;transition:opacity .5s ease}
+.fstep.on{opacity:1}
+.fstep h3{font-size:clamp(38px,4.4vw,70px);margin:0}
+.fstep p{margin:0;font-size:17px;line-height:1.65;color:var(--ink-2);max-width:52ch}
+.phone{position:relative;width:min(300px,62vw);aspect-ratio:9/19;border-radius:44px;padding:12px;background:#151413;box-shadow:0 50px 80px -30px rgba(0,0,0,.55),inset 0 0 0 2px #3a3733;transform-style:preserve-3d;transform:rotateY(-14deg) rotateX(6deg);transition:transform .9s var(--ease-out);z-index:2}
+.film.s1 .phone{transform:rotateY(0) rotateX(0) scale(1.04)}
+.film.s2 .phone{transform:rotateY(10deg) rotateX(-4deg) rotateZ(3deg)}
+.film.s3 .phone{transform:rotateY(-6deg) rotateX(4deg)}
+.screen{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:#F4EEE6;transition:background-color .5s ease}
+.screen::before{content:"";position:absolute;left:50%;top:10px;width:84px;height:24px;margin-left:-42px;border-radius:999px;background:#151413;z-index:3}
+.film.s1 .screen,.film.s2 .screen{background:#E9E0D2}
+.film.s2 .screen{animation:flash 1.2s steps(2) infinite}
+@keyframes flash{50%{background:#F2B300}}
+.film.s3 .screen{background:#1F1D1B}
+#c3Canvas{position:absolute;inset:16% 0 22%;width:100%;height:62%;opacity:0;transform:translateY(30px) scale(.9);transition:opacity .5s ease,transform .7s var(--ease-out)}
+.film.s1 #c3Canvas,.film.s2 #c3Canvas{opacity:1;transform:none}
+.pov{position:absolute;left:18px;right:18px;margin:0;font-weight:700;font-size:17px;line-height:1.3;text-align:center;opacity:0;transition:opacity .4s ease;z-index:2}
+.pov-1{top:58px;color:var(--ink);background:rgba(255,255,255,.85);padding:10px 12px;border-radius:10px}
+.pov-2{bottom:16%;font-family:var(--hand);font-size:28px;color:var(--paper)}
+.pov-3{bottom:9%;font-family:var(--hand);font-size:23px;font-weight:400;color:var(--ink);background:var(--gold);padding:12px;border-radius:12px;transform:rotate(-3deg)}
+.film.s0 .pov-1,.film.s1 .pov-2,.film.s2 .pov-3{opacity:1}
+.remix{position:absolute;inset:48px 12px 12px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;opacity:0;transition:opacity .5s ease}
+.remix i{border-radius:10px;background:#2C2A27;position:relative;overflow:hidden;transform:scale(.6);transition:transform .5s var(--ease-out)}
+.remix i::after{content:"";position:absolute;inset:auto 18% 22%;height:24%;background:#EFE9DC;clip-path:polygon(0 70%,30% 40%,45% 20%,70% 30%,100% 60%,100% 100%,0 100%)}
+.remix i:nth-child(3n+1)::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(242,179,0,.4))}
+.film.s3 .remix{opacity:1}
+.film.s3 .remix i{transform:none}
+.remix i:nth-child(2){transition-delay:.05s}.remix i:nth-child(3){transition-delay:.1s}.remix i:nth-child(4){transition-delay:.15s}.remix i:nth-child(5){transition-delay:.2s}.remix i:nth-child(6){transition-delay:.25s}.remix i:nth-child(7){transition-delay:.3s}.remix i:nth-child(8){transition-delay:.35s}.remix i:nth-child(9){transition-delay:.4s}
+.tiles{position:absolute;inset:0;transform-style:preserve-3d;pointer-events:none}
+.tile{position:absolute;left:50%;top:50%;padding:12px 16px;border-radius:12px;background:#F7F2EA;color:#6F6559;font-size:14px;font-weight:600;white-space:nowrap;box-shadow:0 10px 24px -14px rgba(0,0,0,.25);transition:transform 1s var(--ease-out),opacity .6s ease,background-color .5s ease,color .5s ease}
+/* clean: tidy columns either side */
+.t-a{transform:translate(-290px,-180px)}.t-b{transform:translate(-290px,-110px)}.t-c{transform:translate(-290px,-40px)}
+.t-d{transform:translate(150px,-180px)}.t-e{transform:translate(150px,-110px)}.t-f{transform:translate(150px,-40px)}
+.wild{opacity:0;background:var(--gold);color:var(--ink);font-family:var(--cond);text-transform:uppercase;font-size:20px;letter-spacing:.02em}
+.w-a{transform:translate(-80px,0) scale(.4)}.w-b{transform:translate(-40px,30px) scale(.4)}.w-c{transform:translate(0,0) scale(.4)}.w-d{transform:translate(20px,-20px) scale(.4)}.w-e{transform:translate(-20px,10px) scale(.4)}.w-f{transform:translate(10px,30px) scale(.4)}
+.film.s1 .tile:not(.wild){transform:translate(-50%,-50%) translateZ(-200px) rotate(0);opacity:.0}
+.film.s2 .tile:not(.wild),.film.s3 .tile:not(.wild){opacity:0}
+.film.s2 .wild{opacity:1}
+.film.s2 .w-a{transform:translate(-330px,-240px) rotate(-12deg) translateZ(60px)}
+.film.s2 .w-b{transform:translate(70px,-250px) rotate(9deg) translateZ(120px)}
+.film.s2 .w-c{transform:translate(-360px,40px) rotate(7deg) translateZ(30px)}
+.film.s2 .w-d{transform:translate(150px,-40px) rotate(-14deg) translateZ(90px);background:var(--paper)}
+.film.s2 .w-e{transform:translate(-300px,190px) rotate(-6deg) translateZ(140px);background:var(--paper)}
+.film.s2 .w-f{transform:translate(90px,170px) rotate(12deg) translateZ(70px)}
+.film.s3 .wild{opacity:.0}
+.contrast{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--r);overflow:hidden;margin-bottom:28px}
+.ct{padding:clamp(28px,4vw,52px);display:grid;gap:12px;align-content:start}
+.ct b{font-size:clamp(30px,3.4vw,52px);line-height:1}
+.ct p{margin:0;font-size:16px}
+.ct-clean{background:#F7F2EA;color:#6F6559}
+.ct-clean b{font-weight:400;color:var(--ink)}
+.ct-clean .blk-h{color:#8E8170}
+.ct-wild{background:var(--ink);color:var(--paper);transform-origin:left}
+.ct-wild b{color:var(--gold)}
+.ct-wild .blk-h{color:var(--gold)}
+.c3 .lead{margin-bottom:clamp(64px,8vw,110px)}
+.c3 .strip{background-color:#2A2724}
+@media (max-width:900px){
+  .film{grid-template-columns:1fr;gap:0}
+  .film-stage{grid-column:1;height:62vh;z-index:1}
+  .film-stage::before{inset:2vh -20px}
+  .phone{width:min(180px,46vw)}
+  .film-steps{grid-column:1;grid-row:2;position:relative;z-index:3}
+  .fstep{min-height:0;margin:0 0 54vh;padding:22px;border-radius:var(--r);background:rgba(247,245,240,.97);box-shadow:0 0 0 1px var(--line),0 20px 40px -20px rgba(0,0,0,.3);opacity:1}
+  .tile{font-size:11px;padding:8px 10px}
+  .tile:not(.wild){display:none}
+  .wild{font-size:14px}
+  .film.s2 .w-a{transform:translate(-165px,-160px) rotate(-12deg)}
+  .film.s2 .w-b{transform:translate(40px,-175px) rotate(9deg)}
+  .film.s2 .w-c{transform:translate(-170px,30px) rotate(7deg)}
+  .film.s2 .w-d{transform:translate(70px,-20px) rotate(-14deg)}
+  .film.s2 .w-e{transform:translate(-160px,115px) rotate(-6deg)}
+  .film.s2 .w-f{transform:translate(45px,110px) rotate(12deg)}
+  .pov{font-size:12px;left:10px;right:10px}
+  .pov-1{top:44px;padding:6px 8px}
+  .pov-2{font-size:20px}
+  .pov-3{font-size:15px;padding:8px}
+  .contrast{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .type{clip-path:none!important;animation:none!important}
+  .film.s2 .screen{animation:none}
+  .strip li{opacity:1;transform:none}
+  .stamp{opacity:.92;transform:rotate(-10deg)}
+}
+
+/* END */
+.end{background:var(--paper)}
+.end h2{font-size:clamp(56px,11vw,190px);max-width:none}
+.end .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.who{margin-top:clamp(64px,8vw,110px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-top:26px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.who b{display:block;color:var(--ink);font-family:var(--cond);font-weight:600;font-size:34px;line-height:1;margin-bottom:6px}
+footer{background:var(--paper);color:var(--ink-2);font-size:12px;padding-block:24px 40px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+@media (max-width:700px){.who{grid-template-columns:1fr}}
+
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .panel{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="mark" href="#top"><b>GG · Three Ideas</b><span data-it="un concept di Co-Creation">a Co-Creation concept</span></a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#studio" data-it="Lo studio">The studio</a>
+        <a href="#campaigns" data-it="Le campagne">Campaigns</a>
+        <a href="#contact" data-it="Contatti">Contact</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="it" aria-pressed="false">IT</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="story" id="story" aria-label="The sneaker">
+    <div class="stage" id="stage">
+      <canvas id="storyCanvas" aria-label="A 3D sneaker. Drag it to turn it around."></canvas>
+      <div class="labels" id="labels" aria-hidden="true">
+        <span class="lab" data-part="star" data-it="la stella">the star</span>
+        <span class="lab" data-part="upper" data-it="la tomaia">the upper</span>
+        <span class="lab" data-part="sole" data-it="la suola">the sole</span>
+        <span class="lab" data-part="heel" data-it="l'heel tab">the heel tab</span>
+        <span class="lab" data-part="laces" data-it="i lacci">the laces</span>
+      </div>
+
+      <div class="panel panel-hero" id="pHero">
+        <div class="wrap">
+          <div class="hero-copy">
+            <h1 class="display" data-it="E se Golden Goose mi chiedesse di rendere &lt;em&gt;virale&lt;/em&gt; la Co-Creation?">What if Golden Goose asked me to make Co-Creation go <em>viral?</em></h1>
+            <p data-it="Tre campagne social costruite su quello che il brand è già: una tela bianca, una sneaker vissuta e la libertà di non essere perfetti.">Three social campaigns built on what the brand already is: a blank canvas, a lived-in sneaker and the freedom not to be perfect.</p>
+            <div class="cta">
+              <a class="btn btn-ink" href="#studio"><span data-it="Personalizzala tu">Customise it yourself</span></a>
+            </div>
+          </div>
+        </div>
+        <span class="tape" style="right:9%;top:20%"></span>
+        <span class="note" style="right:7%;top:23%" data-it="Marghera, Venezia,&lt;br&gt;23.12.2000">Marghera, Venice,<br>23.12.2000</span>
+      </div>
+
+      <div class="panel panel-anatomy off" id="pAnatomy">
+        <div class="wrap">
+          <div>
+            <h2 class="display" data-it="Ogni paio nasce incompiuto.">Every pair starts unfinished.</h2>
+            <p data-it="Stella, tomaia, suola, heel tab, lacci. Ogni parte si può cambiare: è il cuore della Co-Creation.">Star, upper, sole, heel tab, laces. Every part can change: that is the heart of Co-Creation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-gold off" id="pGold">
+        <div class="wrap">
+          <div>
+            <h2 class="display" data-it="Ogni graffio diventa oro.">Every scratch turns to gold.</h2>
+            <p data-it="Come nel kintsugi, le crepe non si nascondono: si riempiono d'oro. Le imperfezioni sono la storia di chi la indossa.">Like kintsugi, cracks are not hidden. They are filled with gold. Imperfections are the wearer's story.</p>
+          </div>
+        </div>
+      </div>
+      <div class="scrub" id="scrub"></div>
+    </div>
+  </section>
+
+  <section class="sec studio" id="studio" aria-labelledby="h-studio">
+    <div class="wrap">
+      <h2 id="h-studio" class="display rv" data-it="Fai il Dream Maker per un minuto.">Be a Dream Maker for a minute.</h2>
+      <p class="lead rv" data-it="Cambia la stella, i lacci e l'heel tab. Invecchiala. Scrivici sopra. Un assaggio di quello che la community farà con la tela bianca.">Change the star, the laces and the heel tab. Age it. Write on it. A taste of what the community will do with the blank canvas.</p>
+      <div class="studio-grid">
+        <div class="studio-stage rv">
+          <canvas id="studioCanvas" aria-label="Your sneaker in 3D. Drag to turn it."></canvas>
+          <span class="hint" data-it="trascina per girarla">drag to turn it</span>
+        </div>
+        <div class="tools">
+          <div class="tool rv">
+            <h3 data-it="La stella">The star</h3>
+            <div class="swatches" data-target="star">
+              <button class="sw" type="button" style="--c:#E0A400" data-v="gold" aria-pressed="true" aria-label="Gold"></button>
+              <button class="sw" type="button" style="--c:#D7DCE2" data-v="silver" aria-pressed="false" aria-label="Silver"></button>
+              <button class="sw glitter" type="button" style="--c:#111" data-v="glitter" aria-pressed="false" aria-label="Black glitter"></button>
+              <button class="sw" type="button" style="--c:#E3001B" data-v="red" aria-pressed="false" aria-label="Red"></button>
+              <button class="sw" type="button" style="--c:#0A5CFF" data-v="ice" aria-pressed="false" aria-label="Electric blue"></button>
+              <button class="sw glitter" type="button" style="--c:#FF2E93" data-v="pink" aria-pressed="false" aria-label="Pink glitter"></button>
+              <button class="sw" type="button" style="--c:#00A651" data-v="green" aria-pressed="false" aria-label="Green"></button>
+            </div>
+          </div>
+          <div class="tool rv">
+            <h3 data-it="Heel tab">Heel tab</h3>
+            <div class="swatches" data-target="heel">
+              <button class="sw" type="button" style="--c:#111" data-v="black" aria-pressed="true" aria-label="Black"></button>
+              <button class="sw glitter" type="button" style="--c:#E0A400" data-v="goldGlitter" aria-pressed="false" aria-label="Gold glitter"></button>
+              <button class="sw" type="button" style="--c:#0A3DFF" data-v="navy" aria-pressed="false" aria-label="Cobalt"></button>
+              <button class="sw" type="button" style="--c:#00A651" data-v="olive" aria-pressed="false" aria-label="Green"></button>
+              <button class="sw" type="button" style="--c:#D0021B" data-v="bordeaux" aria-pressed="false" aria-label="Red"></button>
+              <button class="sw" type="button" style="--c:#FF6A00" data-v="orange" aria-pressed="false" aria-label="Orange"></button>
+            </div>
+          </div>
+          <div class="tool rv">
+            <h3 data-it="I lacci">The laces</h3>
+            <div class="swatches" data-target="laces">
+              <button class="sw" type="button" style="--c:#F4F1EA" data-v="white" aria-pressed="true" aria-label="White"></button>
+              <button class="sw" type="button" style="--c:#111" data-v="black" aria-pressed="false" aria-label="Black"></button>
+              <button class="sw" type="button" style="--c:#E0A400" data-v="gold" aria-pressed="false" aria-label="Gold"></button>
+              <button class="sw" type="button" style="--c:#FF2E93" data-v="pink" aria-pressed="false" aria-label="Pink"></button>
+              <button class="sw" type="button" style="--c:#0A5CFF" data-v="blue" aria-pressed="false" aria-label="Blue"></button>
+            </div>
+          </div>
+          <div class="tool rv">
+            <h3><label for="wear" data-it="Quanto vissuta?">How worn?</label></h3>
+            <input class="range" id="wear" type="range" min="0" max="100" value="35">
+            <div class="range-labels"><span data-it="appena fatta">brand new</span><span data-it="dieci estati dopo">ten summers later</span></div>
+          </div>
+          <div class="tool rv">
+            <h3 data-it="Aggiungi">Add</h3>
+            <div class="chips">
+              <button class="chip" type="button" id="addGold" aria-pressed="false" data-it="Crepe d'oro">Gold cracks</button>
+              <button class="chip" type="button" id="addCharms" aria-pressed="false" data-it="Stelline">Little stars</button>
+              <button class="chip" type="button" id="addCrystals" aria-pressed="false" data-it="Cristalli">Crystals</button>
+              <button class="chip" type="button" id="addTape" aria-pressed="false" data-it="Nastro">Tape</button>
+            </div>
+          </div>
+          <div class="field rv">
+            <label for="msg" data-it="Scrivici sopra">Write on it</label>
+            <input id="msg" type="text" maxlength="16" autocomplete="off" placeholder="Venezia 2000">
+            <small data-it="Un nome, una data, una frase. Fino a 16 caratteri.">A name, a date, a motto. Up to 16 characters.</small>
+          </div>
+          <button class="btn btn-line rv" type="button" id="resetShoe"><span data-it="Ricomincia">Start again</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="sil" viewBox="0 0 300 130">
+        <path d="M14 96C12 70 18 50 34 44c18-6 36-2 52 10 10-6 22-14 36-16l28 8c40 12 80 20 112 30 18 6 28 12 28 20z" fill="currentColor"/>
+        <path d="M8 98h284c4 0 6 3 6 8v6c0 6-4 10-10 10H14c-6 0-8-4-8-10v-8c0-4 0-6 2-6z" fill="currentColor" opacity=".55"/>
+      </symbol>
+      <symbol id="star5" viewBox="0 0 100 100"><path d="M50 3l13.5 32.6 35.2 2.9-26.8 23 8.2 34.4L50 77.5 19.9 95.9l8.2-34.4-26.8-23 35.2-2.9z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ================= INDEX ================= -->
+  <section class="sec index" id="campaigns" aria-labelledby="h-index">
+    <div class="wrap">
+      <span class="kicker rv" data-it="Tre campagne">Three campaigns</span>
+      <h2 id="h-index" class="display rv" data-it="Tre idee. &lt;em&gt;Una sneaker vissuta.&lt;/em&gt;">Three ideas. <em>One lived-in sneaker.</em></h2>
+      <p class="lead rv" data-it="Tutte e tre partono da quello che Golden Goose è già: la Co-Creation, l'imperfezione vissuta, lo stile personale. E tutte e tre danno alle persone un motivo per partecipare, non solo per guardare.">All three start from what Golden Goose already is: Co-Creation, lived-in imperfection, personal style. And all three give people a reason to take part, not just to watch.</p>
+      <div class="files">
+        <a class="file rv" href="#c1" data-tilt>
+          <span class="file-tab">01</span>
+          <span class="file-vis vis-c1" aria-hidden="true"><svg viewBox="0 0 300 130"><use href="#sil" class="draw-sil"/></svg></span>
+          <b class="display">Design the Next Golden Goose</b>
+          <span class="file-hook hand" data-it="&quot;Questa è la tua tela bianca.&quot;">"This is your blank canvas."</span>
+          <span class="file-sub" data-it="Co-Creation · contest di design · prodotto vero">Co-Creation · design contest · real product</span>
+        </a>
+        <a class="file file-dark rv" href="#c2" data-tilt>
+          <span class="file-tab">02</span>
+          <span class="file-vis vis-c2" aria-hidden="true"><span class="tag-ev">EVIDENCE<br>#001</span><svg viewBox="0 0 300 130"><use href="#sil"/></svg></span>
+          <b class="display">Show Me Your Crimes</b>
+          <span class="file-hook mono" data-it="&quot;Agente, posso spiegare...&quot;">"Officer, I can explain..."</span>
+          <span class="file-sub" data-it="Storytime · UGC · serie a episodi">Storytime · UGC · episodic series</span>
+        </a>
+        <a class="file file-beige rv" href="#c3" data-tilt>
+          <span class="file-tab">03</span>
+          <span class="file-vis vis-c3" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <b class="display">The Clean Girl Gave Up</b>
+          <span class="file-hook" data-it="&quot;POV: stai cercando di avere la vita in ordine.&quot;">"POV: You're trying to have your life together."</span>
+          <span class="file-sub" data-it="Creator-led · trasformazione · remix">Creator-led · transformation · remixes</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CAMPAIGN 01 ================= -->
+  <section class="camp c1" id="c1" aria-labelledby="h-c1">
+    <div class="c-head wrap">
+      <span class="c-num" aria-hidden="true">01</span>
+      <div>
+        <span class="c-label" data-it="Campagna 01 · Co-Creation">Campaign 01 · Co-Creation</span>
+        <h2 id="h-c1" class="display c-title rv">Design the Next <em>Golden Goose.</em></h2>
+        <p class="c-q hand rv" data-it="&quot;Questa è la tua tela bianca. Cosa creeresti?&quot;">"This is your blank canvas. What would you create?"</p>
+      </div>
+    </div>
+
+    <div class="wrap two">
+      <div class="block rv">
+        <h3 class="blk-h" data-it="L'idea">The idea</h3>
+        <p data-it="E se la prossima sneaker Golden Goose la disegnasse la sua stessa community? Design the Next Golden Goose è una campagna social di Co-Creation: invita le persone a reinterpretare una sneaker completamente bianca e a inviare il proprio design.">What if the next Golden Goose sneaker were designed by its own community? Design the Next Golden Goose is a social Co-Creation campaign that invites people to reinterpret a completely white sneaker and submit their own design.</p>
+        <p data-it="La sneaker bianca diventa una tela per l'espressione personale: colori, illustrazioni, scritte, materiali e riferimenti personali. Alla fine, con il sostegno della community, si sceglie un concept vincente da sviluppare con il team creativo di Golden Goose, con l'ambizione di farlo diventare un prodotto vero. Chi l'ha immaginato viene riconosciuto pubblicamente come autore originale.">The blank sneaker becomes a canvas for individual expression: colours, illustrations, type, materials and personal references. At the end, with the community's support, one winning concept is selected and developed with Golden Goose's creative team, with the ambition of turning it into a real product. Its author is publicly credited as the original creative behind it.</p>
+        <p class="pull" data-it="Il pubblico smette di guardare e diventa parte del progetto.">The audience stops watching and becomes part of the project.</p>
+      </div>
+      <div class="block rv">
+        <h3 class="blk-h" data-it="L'insight">The insight</h3>
+        <div class="poll">
+          <span class="poll-old" data-it="&quot;Quale preferisci, A o B?&quot;">"Which one do you prefer, A or B?"</span>
+          <span class="poll-new" data-it="&quot;Cosa non esiste ancora?&quot;">"What doesn't exist yet?"</span>
+        </div>
+        <p data-it="Chi segue un brand sui social si aspetta sempre più spesso di poter partecipare. Sondaggi, contenuti di personalizzazione e sfide creative coinvolgono più di una comunicazione a senso unico sul prodotto.">Social audiences increasingly expect to take part in the brands they follow. Polls, customisation content and creative challenges involve people more than one-way product communication.</p>
+        <p data-it="Golden Goose ha un'occasione unica, perché la personalizzazione è già nel suo DNA. Invece di chiedere quale prodotto esistente si preferisce, la campagna dà un ruolo più importante: immaginare qualcosa che non esiste ancora. E la possibilità di vederlo prodotto davvero è il motivo concreto per partecipare, seguire e tornare.">Golden Goose has a unique opportunity, because customisation is already in its DNA. Instead of asking which existing product people prefer, the campaign gives them a bigger role: imagining something that doesn't exist yet. And the chance of seeing it made for real is a tangible reason to take part, follow along and come back.</p>
+      </div>
+    </div>
+
+    <!-- sticky 3D mechanic -->
+    <div class="mech" id="mech1">
+      <div class="mech-stage">
+        <canvas id="c1Canvas" aria-label="A 3D sneaker that changes with each phase of the campaign."></canvas>
+        <div class="mech-hud" aria-hidden="true">
+          <div class="hud hud-1"><span class="hand" data-it="la tua tela bianca">your blank canvas</span></div>
+          <div class="hud hud-2"><span class="chip-f" data-it="Digitale">Digital</span><span class="chip-f" data-it="A mano">Hand-drawn</span><span class="chip-f" data-it="Customizzata dal vero">Physically customised</span></div>
+          <div class="hud hud-3">
+            <span class="entry"><b>@giulia.draws</b><i data-v="4812">0</i></span>
+            <span class="entry"><b>@marco_custom</b><i data-v="3977">0</i></span>
+            <span class="entry"><b>@sofi.stories</b><i data-v="5240">0</i></span>
+          </div>
+          <div class="hud hud-4"><div class="vote"><span class="vote-a"><b>70%</b><i data-it="community">community</i></span><span class="vote-b"><b>30%</b><i data-it="giuria">jury</i></span></div></div>
+          <div class="hud hud-5"><span class="hand" data-it="disegnata da: te">designed by: you</span></div>
+        </div>
+        <div class="mech-progress" aria-hidden="true"><i></i></div>
+      </div>
+      <ol class="mech-steps">
+        <li class="step" data-step="0">
+          <span class="step-n" data-it="Fase 1">Phase 1</span>
+          <h3 class="display" data-it="La tela bianca">The blank canvas</h3>
+          <p data-it="Golden Goose lancia la campagna con un'immagine o un breve video: una sneaker completamente bianca su sfondo minimale. La creatività è volutamente semplice, il prodotto resta aperto a ogni interpretazione.">Golden Goose launches with an image or short film: a completely white sneaker on a minimal background. The creative is deliberately simple, leaving the product open to interpretation.</p>
+          <p data-it="Il brand spiega regole, formato di invio, tempi e criteri di selezione, chiarendo che il concept vincente potrà diventare un prodotto fisico, se approvato dal team creativo e se è fattibile produrlo.">The brand explains the rules, submission format, timeline and selection criteria, making it clear the winning concept may become a physical product, subject to creative approval and production feasibility.</p>
+        </li>
+        <li class="step" data-step="1">
+          <span class="step-n" data-it="Fase 2">Phase 2</span>
+          <h3 class="display" data-it="La sfida di design">The design challenge</h3>
+          <p data-it="Chiunque può proporre la sua versione, in tre modi: un design digitale, un disegno a mano fotografato o scansionato, oppure una vera customizzazione fotografata o filmata.">Anyone can propose their version, in three ways: a digital design, a hand-drawn concept photographed or scanned, or a real physical customisation, photographed or filmed.</p>
+          <p data-it="Non serve essere designer: contano l'originalità e la forza dell'idea più della tecnica. Ogni proposta si pubblica con l'hashtag della campagna e il formato richiesto, partendo da un template ufficiale della sneaker bianca, così tutte si possono confrontare in modo equo.">You don't need to be a designer: originality and the strength of the idea matter more than technique. Every entry is published with the campaign hashtag and format, starting from an official blank-sneaker template so entries can be compared fairly.</p>
+          <span class="hashtag">#DesignTheNextGG</span>
+        </li>
+        <li class="step" data-step="2">
+          <span class="step-n" data-it="Fase 3">Phase 3</span>
+          <h3 class="display" data-it="La shortlist della community">The community shortlist</h3>
+          <p data-it="Chiuse le iscrizioni, il brand seleziona una shortlist. Ogni concept viene presentato allo stesso modo in caroselli, Storie e video brevi: il design, il nome di chi l'ha creato e una breve spiegazione dell'ispirazione.">When submissions close, the brand selects a shortlist. Each concept gets the same presentation across carousels, Stories and short videos: the design, the creator's name and a short note on the inspiration.</p>
+          <p data-it="Poi la community vota, nelle Storie o su una pagina dedicata. È la seconda ondata: i finalisti condividono il loro design e chiamano amici e follower a votare.">Then the community votes, in Stories or on a dedicated page. This is the second wave: finalists share their designs and get friends and followers to vote.</p>
+        </li>
+        <li class="step" data-step="3">
+          <span class="step-n" data-it="Fase 4">Phase 4</span>
+          <h3 class="display" data-it="La scelta finale">The final selection</h3>
+          <p data-it="Il vincitore si sceglie con un processo trasparente che unisce il voto della community e una giuria creativa Golden Goose. Ad esempio: 70% voto della community, 30% giuria, che valuta originalità, coerenza con il brand e fattibilità produttiva.">The winner is chosen through a transparent process combining community voting and a Golden Goose creative jury. For example: 70% community vote, 30% jury, judging originality, brand relevance and production feasibility.</p>
+          <p data-it="Pesi e criteri si definiscono e si comunicano prima di partire. La community ha una voce vera, e il design scelto resta all'altezza degli standard del brand.">Weights and criteria are defined and announced before launch. The community gets a real voice, and the chosen design still meets the brand's standards.</p>
+        </li>
+        <li class="step" data-step="4">
+          <span class="step-n" data-it="Fase 5">Phase 5</span>
+          <h3 class="display" data-it="Dal concept al prodotto">From concept to product</h3>
+          <p data-it="Il vincitore viene svelato con una campagna dedicata. Golden Goose racconta lo sviluppo: come la proposta originale viene rivista e trasformata in un design pronto per la produzione, insieme al team creativo.">The winner is revealed through a dedicated campaign. Golden Goose documents the development: how the original submission is reviewed and turned into a production-ready design with the creative team.</p>
+          <p data-it="Chi ha vinto viene riconosciuto come autore del concept, con credito, compenso, diritti e coinvolgimento concordati prima. Se approvata, la sneaker finita esce insieme sui canali del brand e su quelli del vincitore. Non è solo un contest: è una storia completa, dalla tela bianca a un design creato da una persona della community.">The winner is credited as the concept's originator, with credit, compensation, rights and involvement agreed in advance. If approved, the finished sneaker launches across the brand's channels and the winner's own. Not just a contest: a complete story, from a blank canvas to a design created by someone in the community.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="wrap">
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Creator e community">Creators and community</h3>
+          <p data-it="Il lancio coinvolge creator legati al design, appassionati di sneaker, illustratori e personaggi della moda. Non tutti girano lo stesso video promozionale: ognuno interpreta la sneaker bianca con il proprio processo creativo. Così si vedono modi diversi di partecipare, e si capisce che la sfida non è solo per professionisti.">The launch brings in design-oriented creators, sneaker enthusiasts, illustrators and fashion personalities. They don't all make the same promo video: each one interprets the blank sneaker through their own creative process. That shows different ways to take part, and makes clear the challenge isn't only for professionals.</p>
+          <p data-it="I canali ufficiali Golden Goose restano il punto di riferimento centrale per invii, finalisti, voto e annuncio finale.">Golden Goose's official channels stay the central destination for submissions, finalists, voting and the final reveal.</p>
+        </div>
+        <ul class="people rv">
+          <li><span class="p-ico" aria-hidden="true">✎</span><b data-it="L'illustratrice">The illustrator</b><span data-it="sviluppa un concept disegnato a mano">develops a hand-drawn concept</span></li>
+          <li><span class="p-ico" aria-hidden="true">✂</span><b data-it="Il customizer">The customiser</b><span data-it="esplora materiali e texture sulla scarpa vera">explores materials and textures on the real shoe</span></li>
+          <li><span class="p-ico" aria-hidden="true">★</span><b data-it="La fashion creator">The fashion creator</b><span data-it="costruisce il design su una storia personale o un riferimento culturale">builds the design around a personal story or cultural reference</span></li>
+        </ul>
+      </div>
+
+      <div class="eco">
+        <h3 class="blk-h rv" data-it="L'ecosistema di contenuti: tanti picchi, non un solo post">The content ecosystem: many peaks, not one launch post</h3>
+        <ol class="strip rv">
+          <li><b>01</b><strong data-it="Film di lancio">Launch film</strong><span data-it="la sneaker bianca e l'invito a creare">the blank sneaker and the invitation to create</span></li>
+          <li><b>02</b><strong data-it="Interpretazioni dei creator">Creator interpretations</strong><span data-it="approcci diversi alla sfida">different approaches to the challenge</span></li>
+          <li><b>03</b><strong data-it="Design diary">Design diaries</strong><span data-it="il processo dietro le proposte selezionate">the process behind selected entries</span></li>
+          <li><b>04</b><strong data-it="Vetrine della community">Community showcases</strong><span data-it="caroselli e Storie con le proposte valide">carousels and Stories of eligible entries</span></li>
+          <li><b>05</b><strong data-it="Contenuti di voto">Voting content</strong><span data-it="promemoria, confronti tra finalisti, appelli dei creator">reminders, finalist comparisons, creator calls to vote</span></li>
+          <li><b>06</b><strong data-it="Annuncio del vincitore">Winner announcement</strong><span data-it="il concept scelto e chi l'ha creato">the chosen concept and its creator</span></li>
+          <li><b>07</b><strong data-it="Serie sullo sviluppo">Development series</strong><span data-it="dal concept al prodotto finale, se si produce">from concept to final product, if it goes ahead</span></li>
+        </ol>
+      </div>
+
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Dalla partecipazione al valore per il brand">From participation to brand value</h3>
+          <p data-it="Per partecipare bisogna passare del tempo dentro l'identità visiva di Golden Goose, i dettagli dei prodotti e il suo modo di intendere l'espressione personale. I contenuti possono presentare i modelli esistenti e i servizi di personalizzazione accanto alla sfida, collegando la creatività personale ai prodotti veri.">To take part, people spend time inside Golden Goose's visual identity, its product details and its approach to self-expression. Content can present existing designs and customisation services alongside the challenge, linking personal creativity to real products.</p>
+          <p data-it="E si raggiunge chi ama sneaker, moda e design ma oggi non segue il brand. Il risultato più forte non è il numero di proposte: è trasformare la partecipazione creativa in interesse duraturo e considerazione del prodotto.">It also reaches people into sneakers, fashion and design who don't follow the brand yet. The strongest outcome isn't the number of entries: it's turning creative participation into lasting interest and product consideration.</p>
+        </div>
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Obiettivi">Objectives</h3>
+          <ul class="ticks">
+            <li data-it="Più engagement di qualità, grazie alla partecipazione creativa attiva.">More meaningful engagement through active creative participation.</li>
+            <li data-it="Contenuti originali creati dalla community e legati al brand.">Original, community-created content tied to the brand.</li>
+            <li data-it="Più affinità con il brand grazie a un'esperienza di design condivisa.">Stronger brand affinity through a shared design experience.</li>
+            <li data-it="Far conoscere Golden Goose a nuovi pubblici di moda, sneaker e creatività.">Introduce Golden Goose to new audiences in fashion, sneakers and creativity.</li>
+            <li data-it="Interesse per i prodotti esistenti e i servizi di personalizzazione.">Interest in existing products and customisation services.</li>
+            <li data-it="Una storia che va dalla partecipazione social a un possibile lancio fisico.">A story that runs from social participation to a possible physical launch.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kpis rv">
+        <h3 class="blk-h" data-it="KPI">KPIs</h3>
+        <dl>
+          <div><dt data-it="Partecipazione">Participation</dt><dd data-it="proposte valide, autori unici, tasso di completamento dell'invio">eligible submissions, unique contributors, submission completion rate</dd></div>
+          <div><dt>Engagement</dt><dd data-it="voti, condivisioni, salvataggi, commenti, interazioni con i finalisti">votes, shares, saves, comments, interactions with shortlisted concepts</dd></div>
+          <div><dt data-it="Crescita community">Community growth</dt><dd data-it="nuovi follower, partecipanti di ritorno, reach tra i non follower">new followers, returning participants, reach among non-followers</dd></div>
+          <div><dt data-it="Considerazione">Consideration</dt><dd data-it="visite alle pagine prodotto, interazioni con i contenuti di design, clic verso i prodotti">product-page visits, engagement with design content, clicks to product information</dd></div>
+          <div><dt data-it="Impatto commerciale">Commercial impact</dt><dd data-it="acquisti attribuiti, interesse per il prodotto, conversioni dove misurabili">attributed purchases, product interest, conversion where measurable</dd></div>
+        </dl>
+      </div>
+
+      <div class="rules rv">
+        <h3 class="blk-h" data-it="Prima le regole, poi le promesse">Rules first, promises later</h3>
+        <div class="rule-grid">
+          <p data-it="Requisiti, scadenze, modalità di voto, criteri della giuria, proprietà intellettuale e natura del premio si definiscono prima del lancio.">Eligibility, deadlines, voting, judging criteria, intellectual property and the prize are all defined before launch.</p>
+          <p data-it="I partecipanti mantengono i diritti che gli spettano. Ogni uso commerciale del design vincente passa da condizioni chiare e concordate.">Participants keep the rights they're entitled to. Any commercial use of the winning design is covered by clear, agreed terms.</p>
+          <p data-it="Servono controlli di originalità, una verifica di fattibilità e la possibilità che il team creativo debba adattare il design finale.">It needs originality checks, a feasibility review and room for the creative team to adapt the final design.</p>
+          <p data-it="L'impegno a produrre la sneaker si comunica solo dopo l'ok su fattibilità, budget e processo produttivo.">The commitment to produce the sneaker is only announced once feasibility, budget and production are approved.</p>
+        </div>
+      </div>
+
+      <blockquote class="why rv">
+        <span class="blk-h" data-it="Perché funziona per Golden Goose">Why it fits Golden Goose</span>
+        <p data-it="Trasforma l'espressione personale in un'esperienza di brand attiva. Libertà creativa, voto della community e la possibilità di un prodotto vero danno un motivo per tornare per tutta la campagna. E sui social diventa una storia: una scarpa nasce come tela bianca, cresce con la creatività della community e arriva a un design sviluppato con il brand.">It turns self-expression into an active brand experience. Creative freedom, community voting and the chance of a real product give people a reason to keep coming back. And on social it becomes a story: a shoe starts as a blank canvas, grows through the community's creativity and ends as a design developed with the brand.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ================= CAMPAIGN 02 ================= -->
+  <section class="camp c2" id="c2" aria-labelledby="h-c2">
+    <div class="lineup" aria-hidden="true"></div>
+    <div class="c2-hero">
+      <canvas id="c2Canvas" aria-label="A worn sneaker under an interrogation spotlight."></canvas>
+      <div class="wrap c2-hero-in">
+        <span class="c-label" data-it="Campagna 02 · Storytime">Campaign 02 · Storytime</span>
+        <h2 id="h-c2" class="display c-title">Show Me <em>Your Crimes.</em></h2>
+        <p class="type mono" data-it="&quot;Agente, posso spiegare...&quot;">"Officer, I can explain..."</p>
+        <p class="c2-sub" data-it="E se le tue sneaker potessero testimoniare contro di te?">What if your sneakers could testify against you?</p>
+        <span class="placard mono" aria-hidden="true">GOLDEN GOOSE P.D. · CASE #000</span>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="L'idea">The idea</h3>
+          <p data-it="Show Me Your Crimes è una campagna social-first che trasforma l'aspetto vissuto delle sneaker in un'occasione per raccontare storie. Ispirata al linguaggio visivo degli interrogatori e delle confessioni, invita le persone a rivelare le esperienze più assurde, inaspettate o indimenticabili dietro le loro scarpe preferite.">Show Me Your Crimes is a social-first campaign that turns the worn-in look of sneakers into a storytelling opportunity. Inspired by the visual language of police interrogations and confessions, it invites people to reveal the most outrageous, unexpected or unforgettable experiences behind their favourite shoes.</p>
+          <p data-it="L'estetica di Golden Goose diventa il punto di partenza di un esperimento social ironico: ogni segno, piega e graffio può diventare la prova di una vita vissuta bene. Un prodotto di tutti i giorni diventa fonte di umorismo, personalità e partecipazione.">Golden Goose's distinctive aesthetic becomes the starting point of a playful social experiment: every mark, crease and sign of wear can become evidence of a life well lived. An everyday product turns into a source of humour, personality and participation.</p>
+        </div>
+        <div class="block rv">
+          <h3 class="blk-h" data-it="L'insight">The insight</h3>
+          <p data-it="Le persone legano ricordi agli oggetti che indossano ogni giorno. Un paio di sneaker può ricordare un festival, un viaggio improvvisato, una notte memorabile o un periodo di cambiamento.">People attach memories to the things they wear every day. A pair of sneakers can stand for a festival, a spontaneous trip, a memorable night out or a period of change.</p>
+          <p data-it="Sui social, confessioni personali, umorismo in cui ci si riconosce e i format storytime spingono a raccontare la propria esperienza e a taggare gli amici. Golden Goose può unire questi comportamenti in un format riconoscibile, che collega la sua estetica vissuta alle storie vere, e andare oltre i classici contenuti centrati sul prodotto.">On social, personal confessions, relatable humour and storytime formats push people to share their own experiences and tag their friends. Golden Goose can bring these behaviours together in a recognisable format that links its lived-in aesthetic to real stories, moving beyond product-focused content.</p>
+          <p class="pull" data-it="Non cosa sono le tue scarpe. Cosa hanno vissuto con te.">Not what your shoes are. What they've been through with you.</p>
+        </div>
+      </div>
+
+      <h3 class="blk-h rv" data-it="La meccanica: un interrogatorio in tre atti">The mechanic: an interrogation in three acts</h3>
+      <div class="transcript">
+        <article class="tr rv">
+          <span class="tr-h mono" data-it="ATTO 1 · L'APERTURA">ACT 1 · THE OPENING HOOK</span>
+          <p data-it="La campagna parte con una serie di video brevi girati con creator selezionati. Ogni video segue la stessa struttura, ispirata a un interrogatorio, e si apre sempre con la stessa frase:">The campaign launches with a series of short videos made with selected creators. Each one follows the same interrogation-style structure, and always opens with the same line:</p>
+          <p class="tr-line mono" data-it="&quot;Agente, posso spiegare...&quot;">"Officer, I can explain..."</p>
+          <p data-it="Il creator mostra le sue Golden Goose come se fossero le prove di un caso, poi racconta la storia che c'è dietro. Deve sembrare personale, spontanea e divertente, non una pubblicità scritta a tavolino.">The creator presents their Golden Goose sneakers as if they were evidence in a case, then reveals the story behind them. It should feel personal, spontaneous and funny, not like a scripted ad.</p>
+          <ul class="exhibits">
+            <li><b data-it="Prova A">Exhibit A</b><span data-it="Sopravvissute a tre festival nello stesso weekend.">Survived three music festivals in one weekend.</span></li>
+            <li><b data-it="Prova B">Exhibit B</b><span data-it="Quattro paesi attraversati senza mai tornare a casa.">Crossed four countries without ever going home.</span></li>
+            <li><b data-it="Prova C">Exhibit C</b><span data-it="Indossate durante un'avventura improvvisata alle 2 di notte.">Worn on an impulsive 2 a.m. adventure.</span></li>
+            <li><b data-it="Prova D">Exhibit D</b><span data-it="Presenti in ogni foto di una relazione di cinque anni.">In every photo of a five-year relationship.</span></li>
+          </ul>
+        </article>
+        <article class="tr rv">
+          <span class="tr-h mono" data-it="ATTO 2 · LA SFIDA DELLA COMMUNITY">ACT 2 · THE COMMUNITY CHALLENGE</span>
+          <p data-it="Dopo il lancio con i creator, tocca al pubblico: ognuno pubblica un TikTok o un Reel che inizia con la frase della campagna e usa l'hashtag dedicato, mostra le sue scarpe e confessa la storia che c'è dietro.">After the creator launch, it's the audience's turn: people post a TikTok or Reel that opens with the campaign line and uses the dedicated hashtag, show their shoes and confess the story behind them.</p>
+          <p data-it="E possono nominare gli amici le cui sneaker hanno un passato altrettanto discutibile. La sfida è facile da rifare, si riconosce nei primi secondi ed è abbastanza libera da generare interpretazioni sempre diverse.">They can also nominate friends whose sneakers have an equally questionable past. The challenge is easy to reproduce, recognisable in the first few seconds and flexible enough to spark endless interpretations.</p>
+          <span class="hashtag hashtag-dark">#ShowMeYourCrimes</span>
+        </article>
+        <article class="tr rv">
+          <span class="tr-h mono" data-it="ATTO 3 · IL GOLDEN GOOSE POLICE DEPARTMENT">ACT 3 · THE GOLDEN GOOSE POLICE DEPARTMENT</span>
+          <p data-it="I canali ufficiali di Golden Goose diventano il centro della campagna con una serie editoriale ricorrente. Il brand sceglie le confessioni più divertenti e le presenta come singoli casi: numero del caso, foto, confessione del proprietario e verdetto finale.">Golden Goose's official channels become the hub of the campaign through a recurring editorial series. The brand picks the most entertaining submissions and presents each one as a case: case number, photos, the owner's confession and a final verdict.</p>
+          <p data-it="L'identità visiva resta la stessa in ogni episodio, così la serie diventa riconoscibile nel tempo. La community può segnalare nuovi casi, votare la confessione più divertente e suggerire i temi dei prossimi episodi.">The visual identity stays the same in every episode, so the series builds recognition over time. The community can nominate new cases, vote for the funniest confession and suggest future episode themes.</p>
+        </article>
+      </div>
+
+      <div class="cases">
+        <article class="case rv" data-tilt>
+          <div class="case-photo" aria-hidden="true">
+            <svg viewBox="0 0 300 130"><use href="#sil"/><g fill="#5a4630" opacity=".8"><ellipse cx="60" cy="108" rx="26" ry="8"/><ellipse cx="200" cy="112" rx="34" ry="7"/><circle cx="120" cy="80" r="6"/><circle cx="170" cy="70" r="4"/></g></svg>
+            <span class="marker" style="left:18%;top:70%">1</span><span class="marker" style="left:62%;top:74%">2</span>
+          </div>
+          <span class="case-no mono">CASE #001</span>
+          <h4 class="display" data-it="La sopravvissuta ai festival">The Festival Survivor</h4>
+          <p class="mono conf" data-it="&quot;Tre palchi, due temporali, zero docce.&quot;">"Three stages, two thunderstorms, zero showers."</p>
+          <span class="stamp" data-it="COLPEVOLE DI AVER VISSUTO">GUILTY OF LIVING</span>
+        </article>
+        <article class="case rv" data-tilt>
+          <div class="case-photo" aria-hidden="true">
+            <svg viewBox="0 0 300 130"><use href="#sil"/><g fill="none" stroke="#d6c08f" stroke-width="3"><path d="M200 30h60v26h-60z"/><path d="M200 43l-34 30"/></g><text x="230" y="48" fill="#d6c08f" font-size="13" text-anchor="middle" font-family="monospace">LIS→BCN</text></svg>
+            <span class="marker" style="left:72%;top:22%">1</span>
+          </div>
+          <span class="case-no mono">CASE #002</span>
+          <h4 class="display" data-it="La frequent flyer">The Frequent Flyer</h4>
+          <p class="mono conf" data-it="&quot;Dovevo restare un weekend. Sono tornata a maggio.&quot;">"I was meant to stay a weekend. I came back in May."</p>
+          <span class="stamp" data-it="RECIDIVA">REPEAT OFFENDER</span>
+        </article>
+        <article class="case rv" data-tilt>
+          <div class="case-photo" aria-hidden="true">
+            <svg viewBox="0 0 300 130"><use href="#sil"/><text x="150" y="40" fill="#C99A2E" font-size="34" text-anchor="middle" font-family="monospace" font-weight="700">02:00</text></svg>
+            <span class="marker" style="left:48%;top:18%">1</span>
+          </div>
+          <span class="case-no mono">CASE #003</span>
+          <h4 class="display" data-it="La decisione delle 2">The 2 A.M. Decision</h4>
+          <p class="mono conf" data-it="&quot;Era solo un drink. Poi qualcuno ha detto: andiamo al mare?&quot;">"It was just one drink. Then someone said: beach?"</p>
+          <span class="stamp" data-it="NESSUN RIMORSO">NO REGRETS</span>
+        </article>
+      </div>
+      <p class="fine rv" data-it="Casi e confessioni sono esempi per mostrare il formato.">Cases and confessions are examples to show the format.</p>
+
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="I creator: stessa frase, storie diverse">Creators: same line, different stories</h3>
+          <p data-it="Non solo fashion influencer: servono personalità e stili di vita diversi, persone che nei loro contenuti vivono già esperienze da raccontare. Ognuno lancia la sfida con la propria storia, tenendo la stessa frase d'apertura ma adattando il racconto al suo pubblico.">Not only fashion influencers: the campaign needs distinct personalities and lifestyles, people whose content already features memorable experiences. Each creator launches the challenge with their own story, keeping the same opening line while adapting the narrative to their audience.</p>
+          <p data-it="Il risultato è una rete di video collegati: un'identità di campagna coerente, con modi di raccontare diversi. I contenuti migliori possono poi essere amplificati con adv a pagamento, con i giusti diritti d'uso.">The result is a network of connected videos: one consistent campaign identity, many storytelling styles. The best creator content can then be amplified through paid social, with the right usage rights.</p>
+        </div>
+        <ul class="suspects rv">
+          <li data-it="Travel creator">Travel creators</li>
+          <li data-it="Musicisti">Musicians</li>
+          <li data-it="Storyteller della notte">Nightlife storytellers</li>
+          <li data-it="Comici">Comedians</li>
+          <li data-it="Personaggi della moda">Fashion personalities</li>
+        </ul>
+      </div>
+
+      <div class="flow rv">
+        <h3 class="blk-h" data-it="Dall'intrattenimento alla scoperta del prodotto">From entertainment to product discovery</h3>
+        <ol>
+          <li><b data-it="La storia">The story</b><span data-it="attira l'attenzione">grabs attention</span></li>
+          <li><b data-it="Il modello">The model</b><span data-it="tag prodotto, link tracciati, landing dedicate">product tags, trackable links, landing pages</span></li>
+          <li><b data-it="I dettagli">The details</b><span data-it="contenuti su design e personalizzazione">content on design and customisation</span></li>
+          <li><b data-it="La considerazione">Consideration</b><span data-it="dalla storia al prodotto, in modo naturale">from story to product, naturally</span></li>
+        </ol>
+        <p data-it="L'obiettivo non è trasformare ogni video in un messaggio di vendita, ma creare un percorso naturale dall'intrattenimento alla considerazione del prodotto.">The goal isn't to turn every video into a sales message. It's to create a natural path from entertainment to product consideration.</p>
+      </div>
+
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Obiettivi">Objectives</h3>
+          <ul class="ticks">
+            <li data-it="Più notorietà oltre i follower attuali.">More awareness beyond the current follower base.</li>
+            <li data-it="Contenuti creati dagli utenti e partecipazione organica.">User-generated content and organic participation.</li>
+            <li data-it="Rafforzare il legame tra Golden Goose ed espressione personale.">A stronger link between Golden Goose and self-expression.</li>
+            <li data-it="Un format social ricorrente che continua dopo il lancio.">A recurring social format that lives on after launch.</li>
+            <li data-it="Traffico qualificato verso pagine prodotto ed esperienze in negozio.">Qualified traffic to product pages and retail experiences.</li>
+          </ul>
+        </div>
+        <div class="kpis kpis-dark rv">
+          <h3 class="blk-h" data-it="KPI">KPIs</h3>
+          <dl>
+            <div><dt data-it="Notorietà">Awareness</dt><dd data-it="reach, reach tra i non follower, visualizzazioni, completion rate">reach, non-follower reach, video views, completion rate</dd></div>
+            <div><dt>Engagement</dt><dd data-it="condivisioni, salvataggi, commenti, partecipazione, UGC validi">shares, saves, comments, participation, eligible UGC</dd></div>
+            <div><dt data-it="Considerazione">Consideration</dt><dd data-it="visite al profilo e alle pagine prodotto, clic sui link">profile and product-page visits, link clicks</dd></div>
+            <div><dt data-it="Conversione">Conversion</dt><dd data-it="acquisti attribuiti, aggiunte al carrello, tasso di conversione">attributed purchases, add-to-cart, conversion rate</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <blockquote class="why rv">
+        <span class="blk-h" data-it="Perché funziona per Golden Goose">Why it fits Golden Goose</span>
+        <p data-it="Traduce l'identità vissuta del brand in un concept partecipativo. Invece di mostrare e basta sneaker consumate, dà alle persone un motivo per raccontare cosa rappresentano. Il prodotto diventa la prova di esperienze personali, e sono le storie della community a tenere viva la campagna.">It turns the brand's lived-in identity into a participatory concept. Instead of simply showing distressed sneakers, it gives people a reason to talk about what their shoes stand for. The product becomes evidence of personal experiences, and the community's stories keep the campaign alive.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ================= CAMPAIGN 03 ================= -->
+  <section class="camp c3" id="c3" aria-labelledby="h-c3">
+    <div class="c-head wrap">
+      <span class="c-num" aria-hidden="true">03</span>
+      <div>
+        <span class="c-label" data-it="Campagna 03 · Creator-led">Campaign 03 · Creator-led</span>
+        <h2 id="h-c3" class="display c-title rv">The Clean Girl <em>Gave Up.</em></h2>
+        <p class="c-q rv" data-it="Cosa succede quando l'estetica perfetta diventa sfiancante?">What happens when the perfect aesthetic becomes exhausting?</p>
+      </div>
+    </div>
+
+    <div class="wrap two">
+      <div class="block rv">
+        <h3 class="blk-h" data-it="L'idea">The idea</h3>
+        <p data-it="The Clean Girl Gave Up è una campagna social guidata dai creator che gioca con la tensione tra le identità online perfettamente curate e l'imprevedibilità della vita vera.">The Clean Girl Gave Up is a creator-led social campaign that plays with the tension between perfectly curated online identities and the unpredictability of real life.</p>
+        <p data-it="Si parte dentro il mondo visivo della clean girl: outfit neutri, spazi immacolati, capelli perfetti, routine organizzate e una perfezione che sembra senza sforzo. Poi la storia cambia: la protagonista guarda in camera, molla la routine e si mette le sue Golden Goose. La musica cambia, il montaggio accelera e arrivano momenti spontanei: un treno perso, una serata inattesa, un concerto, una cena tardi, una nuova amicizia.">It begins inside the familiar clean girl world: neutral outfits, immaculate spaces, perfect hair, organised routines and seemingly effortless perfection. Then the story changes: the protagonist looks straight into the camera, drops the routine and puts on her Golden Goose sneakers. The music shifts, the editing speeds up, and spontaneous moments take over: a missed train, an unexpected night out, a concert, a late dinner, a new friendship.</p>
+        <p class="pull" data-it="Essere curate non è sbagliato. Ma la vita non deve essere perfetta per valere la pena.">Looking polished isn't wrong. But life doesn't need to be perfectly curated to be worth living.</p>
+      </div>
+      <div class="block rv">
+        <h3 class="blk-h" data-it="L'insight">The insight</h3>
+        <p data-it="I social ci mostrano continuamente vite curatissime e trend estetici. Sono aspirazionali, ma la ripetizione crea spazio per ironia, parodia e voglia di esprimersi in modo più spontaneo.">Social media constantly shows us highly curated lives and aesthetic trends. They're aspirational, but the repetition opens room for irony, parody and a desire for more spontaneous self-expression.</p>
+        <p data-it="L'estetica clean girl si riconosce all'istante. Usare le sue regole e poi romperle crea una trasformazione che si capisce in pochi secondi. Così Golden Goose si lega alla tensione tra perfezione e individualità, senza criticare altri brand né chi ama lo stile minimal.">The clean girl aesthetic is instantly recognisable. Using its rules and then breaking them creates a transformation people understand in seconds. That links Golden Goose to the tension between perfection and individuality, without criticising other brands or people who love minimal style.</p>
+      </div>
+    </div>
+
+    <div class="film" id="film">
+      <div class="film-stage">
+        <div class="tiles" aria-hidden="true">
+          <span class="tile t-a" data-it="6:30 · sveglia">6:30 · wake up</span>
+          <span class="tile t-b">matcha</span>
+          <span class="tile t-c" data-it="pilates">pilates</span>
+          <span class="tile t-d" data-it="skincare in 9 step">9-step skincare</span>
+          <span class="tile t-e" data-it="armadio in ordine">organised wardrobe</span>
+          <span class="tile t-f" data-it="outfit beige">beige outfit</span>
+          <span class="tile wild w-a" data-it="treno perso">missed train</span>
+          <span class="tile wild w-b" data-it="concerto, prima fila">concert, front row</span>
+          <span class="tile wild w-c" data-it="cena alle 23:47">dinner at 11:47 pm</span>
+          <span class="tile wild w-d" data-it="nessun piano">no plan</span>
+          <span class="tile wild w-e" data-it="nuova amica">new friend</span>
+          <span class="tile wild w-f" data-it="ballare fino a tardi">dancing till late</span>
+        </div>
+        <div class="phone" id="phone">
+          <div class="screen">
+            <div class="clean-ui" aria-hidden="true"><i class="cu-cup"></i><i class="cu-l"></i><i class="cu-l s"></i><i class="cu-card"></i><i class="cu-card b"></i></div>
+            <canvas id="c3Canvas" aria-label="The sneaker that marks the switch."></canvas>
+            <p class="pov pov-1" data-it="POV: stai cercando di avere la vita in ordine.">POV: You're trying to have your life together.</p>
+            <p class="pov pov-2" data-it="...">...</p>
+            <p class="pov pov-3" data-it="Forse non serve avere tutto sotto controllo.">Maybe you don't need to have it all together.</p>
+            <div class="remix" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <ol class="film-steps">
+        <li class="fstep" data-step="0">
+          <span class="step-n" data-it="Fase 1">Phase 1</span>
+          <h3 class="display" data-it="La vita perfetta">The perfect life</h3>
+          <p data-it="Ogni creator apre con una sequenza curatissima che abbraccia le regole della clean girl: camera neutra, armadio ordinato, outfit preparato, una routine del mattino montata per sembrare senza sforzo. Deve essere precisa e riconoscibile al primo sguardo. Il testo a schermo introduce la premessa.">Each creator opens with a polished sequence that embraces the clean girl conventions: a neutral bedroom, an organised wardrobe, a prepared outfit, a morning routine edited to look effortless. It must be precise and instantly recognisable. On-screen text sets up the premise.</p>
+        </li>
+        <li class="fstep" data-step="1">
+          <span class="step-n" data-it="Fase 2">Phase 2</span>
+          <h3 class="display" data-it="Lo switch">The switch</h3>
+          <p data-it="Un piccolo momento interrompe la routine: uno sguardo dritto in camera, un cambio di musica, un gesto inatteso. La creator si mette le sue Golden Goose. Questa transizione diventa la firma visiva ricorrente della campagna: le sneaker segnano il passaggio da un'estetica controllata a una vita più spontanea.">A small moment interrupts the routine: a look straight into the camera, a change in the music, an unexpected gesture. The creator puts on her Golden Goose sneakers. This transition becomes the campaign's recurring visual signature: the sneakers mark the shift from a controlled aesthetic to a more spontaneous everyday life.</p>
+        </li>
+        <li class="fstep" data-step="2">
+          <span class="step-n" data-it="Fase 3">Phase 3</span>
+          <h3 class="display" data-it="La vita vera prende il sopravvento">Real life takes over</h3>
+          <p data-it="Il video accelera in una sequenza meno prevedibile: correre per prendere un treno, uscire senza un piano, ballare a un concerto, cenare tardi, incontrare amici per caso. Deve essere energico e personale, non un caos costruito: non si fabbrica l'imperfezione, si celebra la libertà delle esperienze senza copione. Poi la frase di chiusura.">The video speeds into a less predictable sequence: running for a train, going out without a plan, dancing at a concert, eating late, bumping into friends. It should feel energetic and personal, not staged chaos: the point isn't to manufacture imperfection but to celebrate experiences that don't follow a script. Then the closing line.</p>
+        </li>
+        <li class="fstep" data-step="3">
+          <span class="step-n" data-it="Fase 4">Phase 4</span>
+          <h3 class="display" data-it="La community si unisce">The community joins in</h3>
+          <p data-it="Quando i video dei creator hanno fissato il format, il pubblico è invitato a fare la propria versione: rifare la transizione, mostrare la differenza tra il personaggio online e la vita di tutti i giorni, o raccontare un momento in cui ha scelto un'esperienza invece della perfezione. Golden Goose ripubblica le interpretazioni migliori sui canali ufficiali.">Once the creator videos set the format, the audience is invited to make their own version: recreate the transition, show the gap between their curated online persona and everyday life, or share a moment they chose an experience over perfection. Golden Goose features the best interpretations on its official channels.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="wrap">
+      <div class="contrast rv">
+        <div class="ct ct-clean">
+          <span class="blk-h" data-it="Chi costruisce l'estetica">Who builds the aesthetic</span>
+          <b class="display" data-it="Creator fashion e beauty">Fashion and beauty creators</b>
+          <p data-it="Fissano il linguaggio visivo clean girl nei primi secondi.">Set up the clean girl visual language in the first seconds.</p>
+        </div>
+        <div class="ct ct-wild">
+          <span class="blk-h" data-it="Chi la rompe">Who breaks it</span>
+          <b class="display" data-it="Lifestyle, viaggi, musica, comicità">Lifestyle, travel, music, comedy</b>
+          <p data-it="Reinterpretano il concept con le loro routine e le loro esperienze.">Reinterpret the concept through their own routines and experiences.</p>
+        </div>
+      </div>
+      <p class="lead rv" data-it="Il contrasto tra creator è fondamentale: la campagna non impone un'estetica alternativa, mostra che l'individualità ha mille forme. Tutti seguono la stessa struttura, ma con la propria personalità, il proprio montaggio e il proprio umorismo. Una campagna coerente, senza video tutti uguali.">The contrast between creators matters: the campaign doesn't prescribe one alternative aesthetic, it shows individuality takes many forms. Everyone follows the same structure, with their own personality, editing style and humour. A coherent campaign, without identical videos.</p>
+
+      <div class="eco">
+        <h3 class="blk-h rv" data-it="L'ecosistema di contenuti, adattato a ogni piattaforma">The content ecosystem, adapted to each platform</h3>
+        <ol class="strip strip-4 rv">
+          <li><b>01</b><strong data-it="Reel di trasformazione">Transformation Reels</strong><span data-it="video brevi costruiti sullo switch dalla perfezione alla spontaneità, su TikTok e Instagram">short videos built on the switch from perfection to spontaneity, on TikTok and Instagram</span></li>
+          <li><b>02</b><strong data-it="Storie dal backstage">Behind-the-scenes Stories</strong><span data-it="clip informali su cosa è successo davvero nei momenti non pianificati">informal clips of what really happened in the unplanned moments</span></li>
+          <li><b>03</b><strong data-it="Remix della community">Community remixes</strong><span data-it="interpretazioni, reaction e finali alternativi del pubblico">audience interpretations, reactions and alternative endings</span></li>
+          <li><b>04</b><strong data-it="Follow-up editoriali">Editorial follow-ups</strong><span data-it="contenuti brevi su stile personale, spontaneità e giornate memorabili">short pieces on personal style, spontaneity and memorable days</span></li>
+        </ol>
+      </div>
+
+      <div class="two">
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Il legame con il prodotto">The link to the product</h3>
+          <p data-it="Golden Goose compare in modo naturale proprio nella trasformazione: le sneaker sono l'elemento visivo che la rende riconoscibile, non un product placement scollegato. Didascalie dei creator e contenuti successivi indicano i modelli e portano alle pagine prodotto.">Golden Goose appears naturally in the transformation itself: the sneakers are the visual element that makes it recognisable, not an unrelated product placement. Creator captions and follow-up content identify the models and lead to product pages.</p>
+          <p data-it="Altri contenuti mostrano come i diversi modelli funzionano con outfit ed estetiche diverse. Così si raggiunge chi conosce già il brand ma non l'ha ancora mai considerato per sé.">Further content shows how different styles work across outfits and aesthetics. That reaches people who already recognise the brand but haven't yet considered it for themselves.</p>
+        </div>
+        <div class="block rv">
+          <h3 class="blk-h" data-it="Obiettivi">Objectives</h3>
+          <ul class="ticks">
+            <li data-it="Più rilevanza tra il pubblico fashion e lifestyle più attivo online.">More relevance with digitally engaged fashion and lifestyle audiences.</li>
+            <li data-it="Entrare nelle conversazioni su stile personale ed espressione di sé.">A place in conversations about personal style and self-expression.</li>
+            <li data-it="Format video brevi, riconoscibili e ripetibili.">Recognisable, repeatable short-form video formats.</li>
+            <li data-it="Partecipazione del pubblico con trasformazioni in cui ci si riconosce.">Audience participation through relatable transformations.</li>
+            <li data-it="Scoperta del prodotto da parte di chi è attratto dall'estetica del brand.">Product discovery among people drawn to the brand's aesthetic.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="kpis rv">
+        <h3 class="blk-h" data-it="KPI">KPIs</h3>
+        <dl>
+          <div><dt data-it="Notorietà">Awareness</dt><dd data-it="reach, visualizzazioni, reach tra i non follower, completion rate">reach, video views, non-follower reach, completion rate</dd></div>
+          <div><dt>Engagement</dt><dd data-it="condivisioni, salvataggi, commenti, remix, partecipazione al format">shares, saves, comments, remixes, participation in the format</dd></div>
+          <div><dt data-it="Rilevanza del brand">Brand relevance</dt><dd data-it="sentiment, engagement sui contenuti dei creator, reazioni al messaggio">sentiment, creator-content engagement, responses to the message</dd></div>
+          <div><dt data-it="Considerazione">Consideration</dt><dd data-it="visite al profilo e alle pagine prodotto, clic dai contenuti dei creator">profile and product-page visits, clicks from creator content</dd></div>
+          <div><dt data-it="Conversione">Conversion</dt><dd data-it="acquisti attribuiti e altre azioni misurabili, dove tracciabili">attributed purchases and other measurable actions, where tracked</dd></div>
+        </dl>
+      </div>
+
+      <blockquote class="why rv">
+        <span class="blk-h" data-it="Perché funziona per Golden Goose">Why it fits Golden Goose</span>
+        <p data-it="Usa un'estetica social familiare come strumento narrativo, poi fa entrare una Golden Goose riconoscibile proprio nel momento della trasformazione. Posiziona il brand sulla libertà di espressione e su uno stile meno rigido, e dà ai creator un format semplice, adattabile e con un grande potenziale visivo.">It uses a familiar social aesthetic as a narrative device, then brings a recognisable Golden Goose into the moment of transformation. It positions the brand around freedom of expression and a less rigid approach to style, and gives creators a simple, adaptable format with strong visual storytelling potential.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="sec heritage" id="heritage" aria-labelledby="h-her">
+    <div class="wrap">
+      <h2 id="h-her" class="display rv" data-it="Perché tutte e tre funzionano. &lt;em&gt;È già la loro storia.&lt;/em&gt;">Why all three fit. <em>It's already their story.</em></h2>
+      <ol class="years">
+        <li class="rv"><b>2000</b><span data-it="Marghera, Venezia. Francesca Rinaldo e Alessandro Gallo fondano il brand. Il nome viene dall'oca di Esopo, quella delle uova d'oro.">Marghera, Venice. Francesca Rinaldo and Alessandro Gallo found the brand, named after Aesop's goose that laid golden eggs.</span></li>
+        <li class="rv"><b>2007</b><span data-it="Nasce la Super-Star: vissuta già dal primo giorno. Perfect Imperfection, come il kintsugi.">The Super-Star is born, already lived-in on day one. Perfect Imperfection, like kintsugi.</span></li>
+        <li class="rv"><b>2013</b><span data-it="Apre il flagship di Milano, la capitale dello stile.">The Milan flagship opens in the capital of style.</span></li>
+        <li class="rv"><b>2022</b><span data-it="Arrivano i Forward Store: riparare, personalizzare, rigenerare.">Forward Stores arrive: repair, customise, regenerate.</span></li>
+        <li class="rv"><b data-it="Oggi">Today</b><span data-it="Ancora fatte a mano in Veneto. Queste tre campagne portano lo stesso spirito dal negozio ai social, nelle mani della community.">Still handmade in Veneto. These three campaigns take the same spirit from the store to social, into the community's hands.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec end" id="contact" aria-labelledby="h-end">
+    <div class="wrap">
+      <h2 id="h-end" class="display rv" data-it="Disegniamo la prossima.">Let's design the next one.</h2>
+      <p class="lead rv" data-it="È un concept, progettato e sviluppato per mostrare come penso le campagne e come costruisco per il web. Ne vuoi uno così per il tuo brand?">This is a concept, designed and built to show how I think about campaigns and how I build for the web. Want one like it for your brand?</p>
+      <div class="cta rv">
+        <a class="btn btn-ink" href="mailto:dove_mangiamo_oggi@icloud.com?subject=Design%20the%20Next%20Golden%20Goose%20concept"><span data-it="Scrivimi una email">Send me an email</span></a>
+      </div>
+      <div class="who rv">
+        <div><b>Aurora Limosani</b><span data-it="Content creator, social media strategist e web developer, a Milano.">Content creator, social media strategist and web developer, based in Milan.</span></div>
+        <div><b>238K+</b><span data-it="Persone nella community di @dove_mangiamo_oggi su Instagram.">People in the @dove_mangiamo_oggi community on Instagram.</span></div>
+        <div><b>80+</b><span data-it="Collaborazioni con brand, dal food all'hospitality fino all'energia.">Brand collaborations, from food and hospitality to energy.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span data-it="© 2026 Aurora Limosani. Design e codice by me.">© 2026 Aurora Limosani. Design and code by me.</span>
+    <span data-it="Concept personale. Non affiliato, approvato o commissionato da Golden Goose. I marchi appartengono ai rispettivi proprietari.">A personal concept. Not affiliated with, endorsed or commissioned by Golden Goose. All trademarks belong to their owners.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+  if (hasGsap) gsap.registerPlugin(ScrollTrigger);
+  var mouse = {x: 0, y: 0};
+  window.addEventListener('pointermove', function(e){ mouse.x = e.clientX / window.innerWidth * 2 - 1; mouse.y = e.clientY / window.innerHeight * 2 - 1; }, {passive: true});
+  function clamp(v, a, b){ return Math.max(a, Math.min(b, v)); }
+  function ramp(p, a, b){ return clamp((p - a) / (b - a), 0, 1); }
+  function easeIO(x){ return x < .5 ? 4*x*x*x : 1 - Math.pow(-2*x + 2, 3) / 2; }
+  function easeOutBack(x){ var c1 = 1.4, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); }
+
+  /* ================= Language ================= */
+  var lang = 'en', onLang = [];
+  function setLang(l){
+    lang = l; document.documentElement.lang = l;
+    document.querySelectorAll('[data-it]').forEach(function(el){
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = l === 'it' ? el.dataset.it : el.dataset.en;
+    });
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'); });
+    onLang.forEach(function(fn){ fn(); });
+  }
+  document.querySelectorAll('.lang button').forEach(function(b){ b.addEventListener('click', function(){ setLang(b.dataset.lang); }); });
+
+  var has3d = (function(){ try { var c = document.createElement('canvas'); return typeof THREE !== 'undefined' && !!(c.getContext('webgl') || c.getContext('experimental-webgl')); } catch(e){ return false; } })();
+
+  /* ================= The sneaker, built in code ================= */
+  // half-width of the footprint along its length (x from heel -2 to toe +2)
+  function halfW(x){
+    var t = (x + 2) / 4;
+    if (t <= 0.68) return 0.68 + 0.27 * Math.sin(t / 0.68 * Math.PI / 2);
+    return 0.95 - 0.34 * Math.pow((t - 0.68) / 0.32, 2.2);
+  }
+  function upperH(x){ var t = clamp((x + 2) / 4, 0, 1); return 1.14 - 0.74 * Math.pow(t, 1.15); }
+  var SOLE_TOP = 0.31;
+  function topY(x){ return SOLE_TOP + upperH(x); }
+  function footprint(s){
+    var sh = new THREE.Shape(), N = 120;
+    for (var i = 0; i <= N; i++){
+      var a = i / N * Math.PI * 2, c = Math.cos(a), si = Math.sin(a);
+      var x = Math.sign(c) * Math.pow(Math.abs(c), 0.72) * 2.0;
+      var z = Math.sign(si) * Math.pow(Math.abs(si), 0.78) * halfW(x);
+      if (i === 0) sh.moveTo(x * s, z * s); else sh.lineTo(x * s, z * s);
+    }
+    return sh;
+  }
+  // the side star: one lower point is cut short, the way they finish it
+  function cutStarShape(R, r){
+    var pts = [];
+    for (var i = 0; i < 10; i++){ var a = Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r : R; pts.push([Math.cos(a) * rr, Math.sin(a) * rr]); }
+    var s = new THREE.Shape(), out = [];
+    pts.forEach(function(p, i){
+      if (i === 0){ // top point sliced along the line of the lacing
+        var c = R * 0.6, k = 0.24;
+        var hit = function(q){ var t = (c + k * q[0] - q[1]) / ((p[1] - q[1]) - k * (p[0] - q[0])); return [q[0] + t * (p[0] - q[0]), q[1] + t * (p[1] - q[1])]; };
+        out.push(hit(pts[9])); out.push(hit(pts[1])); }
+      else if (i === 2){ var a1 = pts[1], a3 = pts[3], cx = p[0] * 0.62; // left arm sliced off with a straight vertical cut
+        out.push([cx, a1[1] + (p[1] - a1[1]) * ((cx - a1[0]) / (p[0] - a1[0]))]); out.push([cx, a3[1] + (p[1] - a3[1]) * ((cx - a3[0]) / (p[0] - a3[0]))]); }
+      else out.push(p);
+    });
+    out.forEach(function(p, i){ if (i) s.lineTo(p[0], p[1]); else s.moveTo(p[0], p[1]); });
+    s.closePath(); return s;
+  }
+  function starShape(R, r){
+    var s = new THREE.Shape();
+    for (var i = 0; i < 10; i++){
+      var a = Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? r : R;
+      var x = Math.cos(a) * rr, y = Math.sin(a) * rr;
+      if (i === 0) s.moveTo(x, y); else s.lineTo(x, y);
+    }
+    s.closePath(); return s;
+  }
+  // where the side of the upper sits at a given length/height
+  function sideZ(x, y){
+    var v = clamp((y - SOLE_TOP) / upperH(x), 0, 1);
+    return halfW(x) * 0.95 * (1 - 0.5 * Math.pow(v, 1.25));
+  }
+
+  var MATS = {
+    star: {gold: {c: 0xE0A400, m: .8, r: .3}, silver: {c: 0xD7DCE2, m: .9, r: .2}, glitter: {c: 0x111111, m: .6, r: .35, sparkle: true}, red: {c: 0xE3001B, m: .15, r: .4}, ice: {c: 0x0A5CFF, m: .2, r: .35}, pink: {c: 0xFF2E93, m: .45, r: .3, sparkle: true}, green: {c: 0x00A651, m: .15, r: .4}},
+    heel: {black: {c: 0x111111, m: .1, r: .5}, goldGlitter: {c: 0xE0A400, m: .75, r: .3, sparkle: true}, navy: {c: 0x0A3DFF, m: .05, r: .5}, olive: {c: 0x00A651, m: .05, r: .55}, bordeaux: {c: 0xD0021B, m: .05, r: .5}, orange: {c: 0xFF6A00, m: .05, r: .5}, white: {c: 0xF2EEE6, m: 0, r: .62}},
+    laces: {white: {c: 0xF4F1EA, m: 0, r: .8}, black: {c: 0x111111, m: 0, r: .8}, gold: {c: 0xE0A400, m: .6, r: .35}, pink: {c: 0xFF2E93, m: 0, r: .6}, blue: {c: 0x0A5CFF, m: 0, r: .6}}
+  };
+  function sparkleTex(){
+    var c = document.createElement('canvas'); c.width = c.height = 256; var g = c.getContext('2d');
+    g.fillStyle = '#888'; g.fillRect(0, 0, 256, 256);
+    for (var i = 0; i < 900; i++){ var v = 120 + Math.random() * 135; g.fillStyle = 'rgb(' + v + ',' + v + ',' + v + ')'; g.fillRect(Math.random() * 256, Math.random() * 256, 2, 2); }
+    var t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3, 3); return t;
+  }
+  var SPARKLE = null;
+
+  // ---------- a lofted low-top sneaker: every cross-section is an arch over the footprint ----------
+  var BASE = SOLE_TOP - 0.08;
+  function hw(x){ var a = Math.min(1, Math.abs(x) / 2); return halfW(clamp(x, -2, 2)) * 0.94 * Math.pow(1 - Math.pow(a, 7), 1 / 7); }
+  var HK = [[-2.0, 1.0], [-1.75, 1.06], [-1.3, 0.98], [-0.6, 0.93], [0.0, 0.86], [0.6, 0.74], [1.2, 0.6], [1.6, 0.46], [2.0, 0.2]];
+  function Hx(x){
+    x = clamp(x, -2, 2);
+    for (var i = 1; i < HK.length; i++){ if (x <= HK[i][0]){ var a = HK[i-1], b = HK[i], f = (x - a[0]) / (b[0] - a[0]); f = (1 - Math.cos(f * Math.PI)) / 2; return a[1] + (b[1] - a[1]) * f; } }
+    return HK[HK.length-1][1];
+  }
+  var NEXP = 2.7;                        // superellipse: square-ish sides, rounded top
+  function P(s, u, out){                // s: heel->toe, u: medial bottom -> top -> lateral bottom
+    var x = -2 + 4 * s, th = Math.PI * (u - 0.5);
+    var sn = Math.sin(th), cs = Math.cos(th);
+    var z = hw(x) * Math.sign(sn) * Math.pow(Math.abs(sn), 2 / NEXP);
+    var y = BASE + Hx(x) * Math.pow(Math.max(0, cs), 2 / NEXP);
+    out = out || new THREE.Vector3(); out.set(x, y, z); return out;
+  }
+  function surfY(x, z){ var w = hw(x) || 1e-4, a = Math.min(1, Math.abs(z) / w), sn = Math.pow(a, NEXP / 2), cs = Math.sqrt(Math.max(0, 1 - sn * sn)); return BASE + Hx(x) * Math.pow(cs, 2 / NEXP); }
+  function relH(x, y){ return (y - BASE) / Hx(x); }
+  var OPEN = {cx: -1.0, rx: 0.7, rz: 0.47};
+  // collar line: high at the heel, dipping in a concave curve along the sides, rising again to the tongue
+  function cutH(x){ var a = (x + 1.02) / 0.74; return 0.64 + 0.3 * a * a; }
+  function inOpening(x, z, y){ return x > -1.78 && x < -0.3 && relH(x, y) > cutH(x); }
+  var NS = 260, NU = 96;
+  var GRID = (function(){
+    var pos = [], uv = [], nrm = [], tmp = new THREE.Vector3(), a = new THREE.Vector3(), b = new THREE.Vector3(), c = new THREE.Vector3();
+    for (var j = 0; j <= NU; j++){
+      for (var i = 0; i <= NS; i++){
+        var s = i / NS, u = j / NU; P(s, u, tmp); pos.push(tmp.x, tmp.y, tmp.z); uv.push(s, u);
+        var e = 0.002; P(Math.min(1, s + e), u, a); P(Math.max(0, s - e), u, b); a.sub(b);
+        P(s, Math.min(1, u + e), c); P(s, Math.max(0, u - e), b); c.sub(b);
+        var n = new THREE.Vector3().crossVectors(c, a).normalize();
+        if (!isFinite(n.x)) n.set(0, 1, 0);
+        nrm.push(n.x, n.y, n.z);
+      }
+    }
+    return {pos: pos, uv: uv, nrm: nrm};
+  })();
+  function patch(offset, mask, shrink){
+    var g = new THREE.BufferGeometry(), pos = [], idx = [];
+    for (var k = 0; k < GRID.pos.length; k += 3){
+      var o = offset;
+      var x = GRID.pos[k], y = GRID.pos[k+1], z = GRID.pos[k+2];
+      if (shrink){ z *= shrink; y = BASE + (y - BASE) * (shrink + (1 - shrink) * 0.4); }
+      pos.push(x + GRID.nrm[k] * o, y + GRID.nrm[k+1] * o, z + GRID.nrm[k+2] * o);
+    }
+    var row = NS + 1;
+    for (var j = 0; j < NU; j++){
+      for (var i = 0; i < NS; i++){
+        var q = j * row + i, q1 = q + 1, q2 = q + row, q3 = q2 + 1;
+        var cx = (GRID.pos[q*3] + GRID.pos[q3*3]) / 2, cy = (GRID.pos[q*3+1] + GRID.pos[q3*3+1]) / 2, cz = (GRID.pos[q*3+2] + GRID.pos[q3*3+2]) / 2;
+        if (inOpening(cx, cz, cy)) continue;
+        if (mask && !mask(cx, cy, cz, (i + .5) / NS, (j + .5) / NU)) continue;
+        idx.push(q, q2, q1, q1, q2, q3);
+      }
+    }
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(GRID.uv, 2));
+    g.setIndex(idx); g.computeVertexNormals(); return g;
+  }
+  function onSurface(s, u, lift){
+    var p = P(s, u), e = 0.003, a = P(Math.min(1, s + e), u).sub(P(Math.max(0, s - e), u)), c = P(s, Math.min(1, u + e)).sub(P(s, Math.max(0, u - e)));
+    var n = new THREE.Vector3().crossVectors(c, a).normalize();
+    return {p: p.add(n.clone().multiplyScalar(lift || 0)), n: n};
+  }
+  // find u on the lateral side for a relative height (0 = sole, 1 = top)
+  function uForRel(r, lateral){ var th = Math.acos(Math.pow(clamp(r, 0, 1), NEXP / 2)); return lateral ? 0.5 + th / Math.PI : 0.5 - th / Math.PI; }
+
+  function makeShoe(){
+    if (!SPARKLE) SPARKLE = sparkleTex();
+    var shoe = new THREE.Group(), parts = {};
+    function part(name){ var g = new THREE.Group(); g.userData.base = new THREE.Vector3(); parts[name] = g; shoe.add(g); return g; }
+
+    /* leather texture in the upper's own UV space: grain, scuffs, kintsugi, handwriting */
+    var TW = 2048, TH = 1024;
+    var lc = document.createElement('canvas'); lc.width = TW; lc.height = TH; var lg = lc.getContext('2d');
+    var leatherTex = new THREE.CanvasTexture(lc); leatherTex.flipY = false; leatherTex.encoding = THREE.sRGBEncoding; leatherTex.anisotropy = 4;
+    var grain = document.createElement('canvas'); grain.width = TW; grain.height = TH; (function(){
+      var g = grain.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, TW, TH);
+      for (var i = 0; i < 26000; i++){ var v = 214 + Math.random() * 41 | 0; g.fillStyle = 'rgba(' + v + ',' + (v - 2) + ',' + (v - 6) + ',.5)'; g.fillRect(Math.random() * TW, Math.random() * TH, 2 + Math.random() * 3, 2 + Math.random() * 3); }
+    })();
+    /* panels in UV space: suede toe cap, eyestays, quarter seam, all stitched */
+    function rowInfo(v){ var th = Math.PI * (v - 0.5), sn = Math.abs(Math.sin(th)); return {zf: Math.pow(sn, 2 / NEXP), r: Math.pow(Math.max(0, Math.cos(th)), 2 / NEXP)}; }
+    function capX(v){ var ri = rowInfo(v); return 1.06 + 0.07 * ri.zf - 0.1 * Math.pow(1 - ri.r, 2); }
+    var stitchC = document.createElement('canvas'); stitchC.width = TW; stitchC.height = TH;
+    var panels = document.createElement('canvas'); panels.width = TW; panels.height = TH; (function(){
+      var g = panels.getContext('2d');
+      // suede cap: grey with a soft nap
+      g.beginPath(); g.moveTo(TW, 0);
+      for (var py = 0; py <= TH; py += 4){ var x0 = capX(py / TH); g.lineTo((x0 + 2) / 4 * TW, py); }
+      g.lineTo(TW, TH); g.closePath(); g.save(); g.clip();
+      g.fillStyle = '#8f897f'; g.fillRect(0, 0, TW, TH);
+      for (var i = 0; i < 9000; i++){ var c = 120 + Math.random() * 40 | 0; g.fillStyle = 'rgba(' + c + ',' + (c - 4) + ',' + (c - 10) + ',.35)'; g.fillRect(1500 + Math.random() * 548, Math.random() * TH, 3, 3); }
+      g.restore();
+      g = stitchC.getContext('2d');
+      function stitch(pts, off){
+        g.save(); g.setLineDash([9, 7]); g.lineWidth = 2.6; g.strokeStyle = 'rgba(80,70,56,.55)'; g.lineCap = 'round';
+        g.beginPath(); pts.forEach(function(p, k){ var X = p[0] + (off || 0); if (k) g.lineTo(X, p[1]); else g.moveTo(X, p[1]); }); g.stroke(); g.restore();
+      }
+      function seamLine(pts){ g.save(); g.lineWidth = 3; g.strokeStyle = 'rgba(60,52,40,.35)'; g.beginPath(); pts.forEach(function(p, k){ if (k) g.lineTo(p[0], p[1]); else g.moveTo(p[0], p[1]); }); g.stroke(); g.restore(); }
+      var cap = []; for (var py2 = 0; py2 <= TH; py2 += 6) cap.push([(capX(py2 / TH) + 2) / 4 * TW, py2]);
+      seamLine(cap); stitch(cap, -14); stitch(cap, 12);
+      // eyestays: two stitched rows either side of the lacing
+      [true, false].forEach(function(lat){
+        [0.8, 0.86].forEach(function(r){
+          var vy = uForRel(r, lat) * TH, pts = [];
+          for (var xx = -0.5; xx <= 1.0; xx += 0.05) pts.push([(xx + 2) / 4 * TW, vy]);
+          stitch(pts);
+        });
+        // quarter seam rising from the sole to the collar
+        var q = []; for (var r2 = 0.04; r2 <= 0.7; r2 += 0.03){ var xq = -1.38 - 0.18 * r2; q.push([(xq + 2) / 4 * TW, uForRel(r2, lat) * TH]); }
+        seamLine(q); stitch(q, 12);
+      });
+      // bottom stitch line just above the sole
+      [0.02, 0.98].forEach(function(v){ var pts = []; for (var xx2 = -2; xx2 <= 2; xx2 += 0.05) pts.push([(xx2 + 2) / 4 * TW, v * TH]); stitch(pts); });
+    })();
+    var seed = 11; function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+    var scuffs = [], cracks = [];
+    for (var i = 0; i < 160; i++) scuffs.push({x: rnd() * TW, y: 120 + rnd() * (TH - 240), len: 14 + rnd() * 70, ang: rnd() * Math.PI, w: 1 + rnd() * 4, t: rnd()});
+    for (var k = 0; k < 11; k++){
+      var pts = [], x = (0.12 + rnd() * 0.76) * TW, lat = k % 2 === 0, y = (lat ? 0.6 + rnd() * 0.28 : 0.12 + rnd() * 0.28) * TH, a = rnd() * Math.PI * 2;
+      for (var s2 = 0; s2 < 16; s2++){ pts.push([x, y]); a += (rnd() - .5) * 1.3; x += Math.cos(a) * 26; y += Math.sin(a) * 18; }
+      cracks.push(pts);
+    }
+    var paint = {wear: 0.35, gold: 0, msg: '', blank: true};
+    function repaint(){
+      lg.drawImage(grain, 0, 0); lg.globalCompositeOperation = 'multiply'; if (!paint.blank) lg.drawImage(panels, 0, 0); lg.drawImage(stitchC, 0, 0); lg.globalCompositeOperation = 'source-over';
+      var w = paint.wear;
+      scuffs.forEach(function(s){ if (s.t > w) return; lg.strokeStyle = 'rgba(' + (110 + s.t * 40 | 0) + ',' + (102 + s.t * 30 | 0) + ',' + (88 + s.t * 22 | 0) + ',' + (0.14 + w * 0.32) + ')'; lg.lineWidth = s.w; lg.lineCap = 'round'; lg.beginPath(); lg.moveTo(s.x, s.y); lg.lineTo(s.x + Math.cos(s.ang) * s.len, s.y + Math.sin(s.ang) * s.len); lg.stroke(); });
+      if (w > 0.05){
+        var gr = lg.createLinearGradient(0, 0, 0, TH); gr.addColorStop(0, 'rgba(120,105,80,' + w * .22 + ')'); gr.addColorStop(.12, 'rgba(120,105,80,0)'); gr.addColorStop(.88, 'rgba(120,105,80,0)'); gr.addColorStop(1, 'rgba(120,105,80,' + w * .22 + ')');
+        lg.fillStyle = gr; lg.fillRect(0, 0, TW, TH);
+      }
+      if (paint.gold > 0){
+        cracks.forEach(function(pts){
+          var n = Math.max(2, Math.floor(pts.length * paint.gold));
+          lg.lineJoin = 'round'; lg.lineCap = 'round';
+          lg.strokeStyle = '#A97B0C'; lg.lineWidth = 7; lg.beginPath(); lg.moveTo(pts[0][0], pts[0][1]); for (var j = 1; j < n; j++) lg.lineTo(pts[j][0], pts[j][1]); lg.stroke();
+          lg.strokeStyle = 'rgba(255,224,130,.95)'; lg.lineWidth = 2.5; lg.stroke();
+        });
+      }
+      if (paint.msg){
+        lg.save(); lg.translate(0.71 * TW, 0.80 * TH); lg.rotate(-0.04);
+        lg.fillStyle = '#1d1c1b'; lg.font = '88px "Permanent Marker", "Marker Felt", cursive'; lg.textAlign = 'center'; lg.textBaseline = 'middle';
+        lg.fillText(paint.msg, 0, 0, 0.3 * TW); lg.restore();
+      }
+      leatherTex.needsUpdate = true;
+    }
+
+    /* sole: aged cupsole, coloured per vertex */
+    var soleG = part('sole');
+    var soleGeo = new THREE.ExtrudeGeometry(footprint(1), {depth: 0.27, steps: 6, bevelEnabled: true, bevelThickness: 0.035, bevelSize: 0.04, bevelSegments: 3, curveSegments: 1});
+    soleGeo.rotateX(-Math.PI / 2); soleGeo.translate(0, 0.035, 0);
+    var sp = soleGeo.attributes.position, sCol = new Float32Array(sp.count * 3);
+    soleGeo.setAttribute('color', new THREE.BufferAttribute(sCol, 3));
+    var soleNoise = []; for (var q = 0; q < sp.count; q++) soleNoise.push(Math.sin(sp.getX(q) * 7.1) * Math.cos(sp.getZ(q) * 9.3) * .5 + .5 * Math.sin(sp.getX(q) * 23 + sp.getZ(q) * 17));
+    function colorSole(w){
+      for (var q = 0; q < sp.count; q++){
+        var y = sp.getY(q), n = soleNoise[q];
+        var base = [0.93, 0.89, 0.78];
+        var aged = [0.84, 0.74, 0.52];
+        var dirt = [0.62, 0.56, 0.45];
+        var t = clamp(w * (0.55 + 0.45 * n), 0, 1);
+        var lowDirt = clamp((0.16 - y) / 0.16, 0, 1) * w * 0.8;
+        var topLine = y > 0.27 ? 0.12 * w : 0;
+        for (var c = 0; c < 3; c++){ var v = base[c] + (aged[c] - base[c]) * t; v = v + (dirt[c] - v) * (lowDirt + topLine); sCol[q*3+c] = Math.pow(v, 2.2); }
+      }
+      soleGeo.attributes.color.needsUpdate = true;
+    }
+    var soleMat = new THREE.MeshStandardMaterial({vertexColors: true, roughness: .9});
+    soleG.add(new THREE.Mesh(soleGeo, soleMat));
+    // foxing lines: a groove around the sole and a stitched seam where the upper meets it
+    (function(){
+      function ring(off, y){
+        var p = footprint(1).getPoints(120); p.pop(); var n = p.length;
+        return p.map(function(q, i){ var a = p[(i + n - 1) % n], b = p[(i + 1) % n], dx = b.x - a.x, dy = b.y - a.y, l = Math.hypot(dx, dy) || 1; return new THREE.Vector3(q.x + dy / l * off, y, -(q.y - dx / l * off)); });
+      }
+      var groove = ring(0.04, 0.15);
+      var gm = new THREE.MeshStandardMaterial({color: 0xA59775, roughness: 1});
+      soleG.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(groove, true), 220, 0.012, 6, true), gm));
+      var seam = ring(0.0, 0.355);
+      var sg = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(seam, true), 260, 0.009, 5, true);
+      soleG.add(new THREE.Mesh(sg, new THREE.MeshStandardMaterial({color: 0x6f6658, roughness: 1})));
+    })();
+
+    /* upper: leather outside, lining inside, insole */
+    var upG = part('upper');
+    var upMat = new THREE.MeshStandardMaterial({color: 0xF2EEE6, roughness: .62, map: leatherTex});
+    upG.add(new THREE.Mesh(patch(0, null), upMat));
+    var lining = new THREE.Mesh(patch(0, null, 0.93), new THREE.MeshStandardMaterial({color: 0xE6DECF, roughness: .95, side: THREE.BackSide}));
+    upG.add(lining);
+    var insole = new THREE.Mesh(new THREE.ShapeGeometry(footprint(0.9)), new THREE.MeshStandardMaterial({color: 0xD9CDB6, roughness: 1}));
+    insole.rotation.x = -Math.PI / 2; insole.position.y = BASE + 0.06; upG.add(insole);
+    // collar padding along the opening
+    var collarPts = [];
+    [false, true].forEach(function(lat){ for (var k = 0; k <= 40; k++){ var f = k / 40, cx = lat ? -0.32 - 1.44 * f : -1.76 + 1.44 * f, o = onSurface((cx + 2) / 4, uForRel(Math.min(0.995, cutH(cx)), lat), 0.004); collarPts.push(o.p); } });
+    var collar = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(collarPts, true), 128, 0.045, 10, true), new THREE.MeshStandardMaterial({color: 0xF1EDE5, roughness: .7}));
+    upG.add(collar);
+
+    // side perforations, both sides
+    var holeMat = new THREE.MeshStandardMaterial({color: 0x8d877c, roughness: 1});
+    [[-0.32, .62], [-0.2, .66], [-0.08, .62]].forEach(function(h){
+      [true, false].forEach(function(lat){
+        var o = onSurface((h[0] + 2) / 4, uForRel(h[1], lat), 0.006);
+        var m = new THREE.Mesh(new THREE.CircleGeometry(0.028, 16), holeMat); m.position.copy(o.p); m.lookAt(o.p.clone().add(o.n)); upG.add(m);
+      });
+    });
+
+    /* heel tab: its own colour, cut on a diagonal */
+    var heelG = part('heel');
+    var heelMat = new THREE.MeshStandardMaterial({color: 0x1d1c1b, roughness: .8});
+    heelG.add(new THREE.Mesh((function(){
+      // own grid so the diagonal front edge stays clean instead of stair-stepped
+      var g = new THREE.BufferGeometry(), pos = [], idx = [], M = 24, rows = [], tmpo;
+      for (var j = 0; j <= NU; j++){ var u = j / NU, ri = rowInfo(u); if (ri.r < 0.22) continue; rows.push(u); }
+      rows.forEach(function(u){
+        var r = rowInfo(u).r, xb = -1.74 + 0.1 * r;
+        for (var i = 0; i <= M; i++){ var x = -2 + (xb + 2) * i / M; tmpo = onSurface((x + 2) / 4, u, 0.014); pos.push(tmpo.p.x, tmpo.p.y, tmpo.p.z); }
+      });
+      for (var a = 0; a < rows.length - 1; a++) for (var i2 = 0; i2 < M; i2++){
+        var q = a * (M + 1) + i2, q2 = q + M + 1, k = q * 3, k3 = (q2 + 1) * 3;
+        if (inOpening((pos[k] + pos[k3]) / 2, (pos[k+2] + pos[k3+2]) / 2, (pos[k+1] + pos[k3+1]) / 2)) continue;
+        idx.push(q, q2, q + 1, q + 1, q2, q2 + 1);
+      }
+      g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals(); return g;
+    })(), heelMat));
+
+    /* tongue + laces */
+    var laceG = part('laces');
+    var tongueGeo = new THREE.BufferGeometry(), tp = [], ti = [], TX = 40, TZ = 10;
+    for (var tj = 0; tj <= TZ; tj++) for (var tx2 = 0; tx2 <= TX; tx2++){
+      var xx = -0.62 + 1.42 * tx2 / TX, zz = -0.25 + 0.5 * tj / TZ;
+      var yy = surfY(Math.max(xx, -0.3), zz) + 0.035 + Math.max(0, -0.3 - xx) * 0.55;
+      tp.push(xx, yy, zz);
+    }
+    for (var tj2 = 0; tj2 < TZ; tj2++) for (var tx3 = 0; tx3 < TX; tx3++){ var q0 = tj2 * (TX + 1) + tx3; ti.push(q0, q0 + TX + 1, q0 + 1, q0 + 1, q0 + TX + 1, q0 + TX + 2); }
+    tongueGeo.setAttribute('position', new THREE.Float32BufferAttribute(tp, 3)); tongueGeo.setIndex(ti); tongueGeo.computeVertexNormals();
+    laceG.add(new THREE.Mesh(tongueGeo, new THREE.MeshStandardMaterial({color: 0x9E978C, roughness: 1, side: THREE.DoubleSide})));
+    var laceMat = new THREE.MeshStandardMaterial({color: 0xEFE8D6, roughness: .85});
+    var eye = []; for (var e2 = 0; e2 < 6; e2++){ var ex = -0.32 + e2 * 0.2; eye.push(ex); }
+    function lp(x, z, lift){ return new THREE.Vector3(x, Math.max(surfY(x, z), surfY(x, 0) - 0.02) + (lift || 0.04), z); }
+    function laceTube(a, b){ var mid = a.clone().add(b).multiplyScalar(.5); mid.y += 0.05; return new THREE.Mesh(new THREE.TubeGeometry(new THREE.QuadraticBezierCurve3(a, mid, b), 16, 0.032, 8, false), laceMat); }
+    var ez = 0.3;
+    for (var e3 = 0; e3 < eye.length - 1; e3++){
+      laceG.add(laceTube(lp(eye[e3], -ez), lp(eye[e3+1], ez, 0.06)));
+      laceG.add(laceTube(lp(eye[e3], ez), lp(eye[e3+1], -ez, 0.05)));
+    }
+    // the bow, resting on top near the collar
+    var knot = lp(-0.36, 0, 0.09);
+    var loopA = new THREE.Mesh(new THREE.TorusGeometry(0.16, 0.03, 8, 24), laceMat); loopA.position.copy(knot).add(new THREE.Vector3(-0.08, 0.02, 0.17)); loopA.rotation.set(1.2, 0.3, 0.5); laceG.add(loopA);
+    var loopB = new THREE.Mesh(new THREE.TorusGeometry(0.15, 0.03, 8, 24), laceMat); loopB.position.copy(knot).add(new THREE.Vector3(-0.05, 0.02, -0.17)); loopB.rotation.set(1.3, -0.3, -0.4); laceG.add(loopB);
+    laceG.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([knot.clone(), knot.clone().add(new THREE.Vector3(0.05, -0.05, 0.3)), lp(0.05, 0.62, -0.25)]), 20, 0.03, 8, false), laceMat));
+    laceG.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3([knot.clone(), knot.clone().add(new THREE.Vector3(0.12, -0.03, -0.25)), lp(0.3, -0.6, -0.3)]), 20, 0.03, 8, false), laceMat));
+
+    /* stars on both sides, following the curve of the leather */
+    var starMat = new THREE.MeshStandardMaterial({color: 0xE0A400, metalness: .8, roughness: .3});
+    var starGeo = new THREE.ExtrudeGeometry(cutStarShape(0.44, 0.19), {depth: 0.012, bevelEnabled: true, bevelThickness: 0.006, bevelSize: 0.008, bevelSegments: 2}); starGeo.center();
+    var starL = part('starL'), starM = part('starM');
+    function placeStar(g, lat){
+      var o = onSurface((0.05 + 2) / 4, uForRel(0.68, lat), 0.018);
+      var m = new THREE.Mesh(starGeo, starMat); g.position.copy(o.p); g.userData.base.copy(o.p);
+      m.lookAt(o.n.clone()); m.rotateZ(lat ? -0.42 : 0.42); g.add(m);
+    }
+    placeStar(starL, true); placeStar(starM, false);
+
+    /* extras */
+    var extras = part('extras');
+    var charmMat = new THREE.MeshStandardMaterial({color: 0xC99A2E, metalness: .8, roughness: .25});
+    var charmGeo = new THREE.ExtrudeGeometry(starShape(0.08, 0.035), {depth: 0.015, bevelEnabled: false}); charmGeo.center();
+    var charms = new THREE.Group(); extras.add(charms); charms.visible = false;
+    [[-1.2, .45, 1], [0.95, .35, 1], [1.4, .5, 1], [-0.75, .3, 1], [-1.1, .5, 0], [0.9, .4, 0], [1.5, .3, 0]].forEach(function(c, i){
+      var o = onSurface((c[0] + 2) / 4, uForRel(c[1], !!c[2]), 0.02);
+      var m = new THREE.Mesh(charmGeo, charmMat); m.position.copy(o.p); m.lookAt(o.p.clone().add(o.n)); m.rotateZ(i * 0.8); m.userData.t0 = 0; charms.add(m);
+    });
+    var crystals = new THREE.Group(); extras.add(crystals); crystals.visible = false;
+    var cMat = new THREE.MeshStandardMaterial({color: 0xffffff, metalness: 1, roughness: .05, emissive: 0x555555});
+    for (var cq = 0; cq < 14; cq++){
+      var ang = cq / 14 * Math.PI * 2, xs = 0.32 + Math.cos(ang) * 0.55, rh = 0.45 + Math.sin(ang) * 0.3;
+      var o2 = onSurface((xs + 2) / 4, uForRel(rh, true), 0.03);
+      var cr = new THREE.Mesh(new THREE.OctahedronGeometry(0.035), cMat); cr.position.copy(o2.p); crystals.add(cr);
+    }
+    var tape = new THREE.Mesh(patch(0.026, function(x, y){ return x > 1.28 && x < 1.48 && relH(x, y) > 0.15; }), new THREE.MeshStandardMaterial({color: 0xB2ADA3, roughness: .95, transparent: true, opacity: .93, side: THREE.DoubleSide}));
+    tape.visible = false; extras.add(tape);
+
+    // contact shadow
+    var sc = document.createElement('canvas'); sc.width = sc.height = 256; var sg = sc.getContext('2d');
+    var rg = sg.createRadialGradient(128, 128, 10, 128, 128, 128); rg.addColorStop(0, 'rgba(0,0,0,.32)'); rg.addColorStop(1, 'rgba(0,0,0,0)'); sg.fillStyle = rg; sg.fillRect(0, 0, 256, 256);
+    var shadow = new THREE.Mesh(new THREE.PlaneGeometry(5.8, 2.6), new THREE.MeshBasicMaterial({map: new THREE.CanvasTexture(sc), transparent: true, depthWrite: false}));
+    shadow.rotation.x = -Math.PI / 2; shadow.position.y = -0.01; shoe.add(shadow);
+
+    ['sole', 'upper', 'laces', 'heel', 'extras'].forEach(function(n){ parts[n].userData.base.set(0, 0, 0); });
+    // toe spring and a slight heel rise, so the sole rocks instead of sitting flat as a brick
+    (function(){
+      function by(x){ var t = x > 0.7 ? Math.pow((x - 0.7) / 1.3, 2) * 0.2 : 0, h = x < -1.45 ? Math.pow((-1.45 - x) / 0.55, 2) * 0.05 : 0; return t + h; }
+      var moved = [];
+      shoe.updateMatrixWorld(true);
+      shoe.traverse(function(o){
+        if (!o.isMesh) return;
+        var par = o.parent;
+        if (o.position.lengthSq() < 1e-10 && par.position.lengthSq() < 1e-10){
+          var p = o.geometry.attributes.position;
+          for (var i = 0; i < p.count; i++) p.setY(i, p.getY(i) + by(p.getX(i)));
+          p.needsUpdate = true; if (o.geometry.index) o.geometry.computeVertexNormals();
+        } else if (o.position.lengthSq() < 1e-10){
+          if (moved.indexOf(par) < 0){ moved.push(par); var d = by(par.position.x); par.position.y += d; if (par.userData.base) par.userData.base.y += d; }
+        } else { o.position.y += by(o.position.x); }
+      });
+    })();
+    shoe.position.y = -0.75;
+    shoe.scale.set(0.86, 1, 1);   // shorter, chunkier proportions
+    // hex colours are sRGB: convert once so they render at full saturation instead of pastel
+    shoe.traverse(function(o){ var m = o.material; if (m && m.color && !m.userData.lin){ m.color.convertSRGBToLinear(); m.userData.lin = true; } });
+    colorSole(0.35); repaint();
+
+    function applyMat(mat, d){ mat.color.setHex(d.c).convertSRGBToLinear(); mat.metalness = d.m; mat.roughness = d.r; mat.map = d.sparkle ? SPARKLE : null; mat.needsUpdate = true; }
+    return {
+      group: shoe, parts: parts,
+      anchors: {star: function(){ return starL; }, upper: function(){ return upG; }, sole: function(){ return soleG; }, heel: function(){ return heelG; }, laces: function(){ return laceG; }},
+      explode: function(e){
+        parts.sole.position.y = -0.95 * e;
+        parts.laces.position.y = 0.95 * e;
+        parts.starL.position.z = parts.starL.userData.base.z + 1.0 * e;
+        parts.starM.position.z = parts.starM.userData.base.z - 1.0 * e;
+        parts.heel.position.x = -0.95 * e;
+        parts.extras.position.z = 0.45 * e;
+        parts.laces.rotation.z = 0.12 * e; parts.sole.rotation.z = -0.05 * e;
+      },
+      wear: function(w){ paint.wear = w; colorSole(w); repaint(); },
+      gold: function(g){ paint.gold = g; repaint(); },
+      star: function(k){ applyMat(starMat, MATS.star[k]); },
+      heel: function(k){ applyMat(heelMat, MATS.heel[k]); },
+      laces: function(k){ applyMat(laceMat, MATS.laces[k]); },
+      message: function(t){ paint.msg = t; repaint(); },
+      charms: function(on){ charms.visible = on; charms.children.forEach(function(c){ c.userData.t0 = performance.now(); }); },
+      crystals: function(on){ crystals.visible = on; },
+      tape: function(on){ tape.visible = on; },
+      stars: function(on){ starL.visible = on; starM.visible = on; },
+      blank: function(on){ if (paint.blank === on) return; paint.blank = on; repaint(); },
+      update: function(now){
+        if (charms.visible) charms.children.forEach(function(c, i){ var k = clamp((now - c.userData.t0 - i * 90) / 500, 0, 1); c.scale.setScalar(Math.max(0.001, reduce ? 1 : easeOutBack(k))); });
+        if (crystals.visible) crystals.children.forEach(function(c, i){ c.rotation.y = now * 0.002 + i; });
+      }
+    };
+  }
+
+  function makeStage(canvas, opts){
+    var renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05; renderer.setClearColor(0x000000, 0);
+    var scene = new THREE.Scene();
+    // soft studio environment so leather and metal pick up real reflections
+    (function(){
+      var env = new THREE.Scene(), geo = new THREE.SphereGeometry(10, 32, 16), cols = [], p = geo.attributes.position;
+      for (var i = 0; i < p.count; i++){ var t = (p.getY(i) / 10 + 1) / 2, c = 0.35 + 0.65 * Math.pow(t, 1.4); cols.push(c, c * 0.97, c * 0.92); }
+      geo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+      env.add(new THREE.Mesh(geo, new THREE.MeshBasicMaterial({vertexColors: true, side: THREE.BackSide})));
+      [[6, 5, 4, 5, 3], [-7, 3, -2, 3, 4], [0, 9, 0, 6, 6]].forEach(function(b){ var m = new THREE.Mesh(new THREE.PlaneGeometry(b[3], b[4]), new THREE.MeshBasicMaterial({color: 0xffffff, side: THREE.DoubleSide})); m.position.set(b[0], b[1], b[2]); m.lookAt(0, 0, 0); env.add(m); });
+      var pm = new THREE.PMREMGenerator(renderer); scene.environment = pm.fromScene(env, 0.03).texture; pm.dispose();
+    })();
+    var cam = new THREE.PerspectiveCamera(opts.fov || 30, 1, 0.1, 100);
+    cam.position.set(0, 1.7, 9.5); cam.lookAt(0, 0.15, 0);
+    var hemi = new THREE.HemisphereLight(0xfffaf0, 0x8f8676, 0.3); scene.add(hemi);
+    var key = new THREE.DirectionalLight(0xffffff, 1.1); key.position.set(4, 7, 6); scene.add(key);
+    var fill = new THREE.DirectionalLight(0xfff1d6, 0.4); fill.position.set(-6, 3, -3); scene.add(fill);
+    var rim = new THREE.DirectionalLight(0xffffff, 0.5); rim.position.set(-2, 4, -8); scene.add(rim);
+    var spot = null;
+    if (opts.mood === 'noir'){
+      // interrogation room: one hard light from above, everything else falls off
+      scene.environment = null; hemi.intensity = 0.06; key.intensity = 0.18; fill.intensity = 0.06; rim.intensity = 1.1; renderer.toneMappingExposure = 1.15;
+      spot = new THREE.SpotLight(0xfff1d2, 4.2, 30, 0.36, 0.55, 1.1); spot.position.set(0, 9, 2.5); scene.add(spot); scene.add(spot.target);
+    }
+    var shoe = makeShoe(); var root = new THREE.Group(); root.add(shoe.group); scene.add(root);
+    var spin = opts.spin || 0, spinV = 0, drag = null, visible = true, last = performance.now();
+    canvas.addEventListener('pointerdown', function(e){ drag = {x: e.clientX}; canvas.setPointerCapture(e.pointerId); });
+    canvas.addEventListener('pointermove', function(e){ if (!drag) return; spinV = (e.clientX - drag.x) * 0.008; drag.x = e.clientX; });
+    canvas.addEventListener('pointerup', function(){ drag = null; });
+    canvas.addEventListener('pointercancel', function(){ drag = null; });
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; }).observe(canvas);
+    function resize(){ var w = canvas.clientWidth, h = canvas.clientHeight; if (!w || !h) return; renderer.setSize(w, h, false); cam.aspect = w / h;
+      var need = (opts.fit || 3.1) / (Math.tan(cam.fov * Math.PI / 360) * cam.aspect), d = Math.max(9.5, need);
+      cam.position.set(0, 1.7 * d / 9.5, d); cam.lookAt(0, 0.15, 0); cam.updateProjectionMatrix(); }
+    resize(); window.addEventListener('resize', resize);
+    var stage = {scene: scene, cam: cam, root: root, shoe: shoe, renderer: renderer, spot: spot, extraSpin: 0, offsetX: 0, tiltOn: true, onFrame: null,
+      project: function(obj){ var v = new THREE.Vector3(); obj.getWorldPosition(v); v.project(cam); return {x: (v.x + 1) / 2 * canvas.clientWidth, y: (1 - v.y) / 2 * canvas.clientHeight}; }};
+    (function frame(){
+      requestAnimationFrame(frame);
+      var now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+      if (!visible) return;
+      if (!drag) spinV += ((reduce ? 0 : (opts.auto || 0.0035)) - spinV) * 0.05;
+      spin += spinV * dt * 60;
+      root.rotation.y = spin + stage.extraSpin;
+      root.position.x += (stage.offsetX - root.position.x) * 0.08;
+      var tx = stage.tiltOn && !reduce ? mouse.y * 0.12 : 0, tz = stage.tiltOn && !reduce ? -mouse.x * 0.08 : 0;
+      root.rotation.x += (0.05 + tx - root.rotation.x) * 0.06;
+      root.rotation.z += (tz - root.rotation.z) * 0.06;
+      shoe.update(now);
+      if (stage.onFrame) stage.onFrame(now, dt);
+      renderer.render(scene, cam);
+    })();
+    return stage;
+  }
+
+  /* ================= Story: hero, anatomy, kintsugi on one shoe ================= */
+  (function(){
+    var story = document.getElementById('story');
+    var pHero = document.getElementById('pHero'), pAn = document.getElementById('pAnatomy'), pGold = document.getElementById('pGold');
+    var labels = Array.prototype.slice.call(document.querySelectorAll('.lab')), scrub = document.getElementById('scrub');
+    var st = null;
+    if (has3d){ try { st = makeStage(document.getElementById('storyCanvas'), {spin: -0.6, auto: 0.0025}); } catch(e){ st = null; } }
+    var prog = 0, intro = reduce ? 1 : 0, lastGold = -1, lastWear = -1;
+    var wide = function(){ return window.innerWidth > 820; };
+    function compute(){
+      var r = story.getBoundingClientRect();
+      prog = clamp(-r.top / (r.height - window.innerHeight), 0, 1);
+    }
+    function panels(){
+      pHero.classList.toggle('off', prog > 0.12);
+      pAn.classList.toggle('off', !(prog > 0.26 && prog < 0.6));
+      pGold.classList.toggle('off', !(prog > 0.72));
+      scrub.style.setProperty('--p', prog);
+    }
+    if (st){
+      st.onFrame = function(now, dt){
+        compute();
+        if (intro < 1) intro = Math.min(1, intro + dt / 1.8);
+        var introE = (1 - easeOutBack(intro)) * 2.2;
+        var e = ramp(prog, 0.22, 0.36) * (1 - ramp(prog, 0.58, 0.7));
+        st.shoe.explode(Math.max(introE, easeIO(e) * 1.05));
+        // shoe sits right of the copy in the hero, centred afterwards
+        var heroShift = wide() ? 1.55 : 0;
+        st.offsetX = heroShift * (1 - ramp(prog, 0.1, 0.24)) - (wide() ? 1.15 : 0) * ramp(prog, 0.6, 0.72);
+        st.root.position.y = wide() ? 0 : -0.55 * (1 - ramp(prog, 0.1, 0.24));
+        st.extraSpin = prog * Math.PI * 1.6;
+        var wear = 0.12 + 0.6 * ramp(prog, 0.66, 0.8), gold = ramp(prog, 0.76, 0.95);
+        if (Math.abs(wear - lastWear) > 0.02){ st.shoe.wear(wear); lastWear = wear; }
+        if (Math.abs(gold - lastGold) > 0.02 || (gold === 1 && lastGold !== 1)){ st.shoe.gold(gold); lastGold = gold; }
+        var showLabels = e > 0.75 && intro >= 1;
+        labels.forEach(function(l){
+          var a = st.shoe.anchors[l.dataset.part](); var pos = st.project(a);
+          var lift = {star: -70, upper: -150, sole: 70, heel: -60, laces: -60}[l.dataset.part] || -60;
+          var side = {star: 30, upper: 0, sole: 0, heel: -40, laces: 70}[l.dataset.part] || 0;
+          l.style.transform = 'translate(' + (pos.x + side) + 'px,' + (pos.y + lift) + 'px) translate(-50%,-50%) rotate(-3deg)';
+          l.classList.toggle('on', showLabels);
+        });
+        panels();
+      };
+    } else {
+      document.getElementById('storyCanvas').style.display = 'none';
+      story.style.height = 'auto';
+      window.addEventListener('scroll', function(){ compute(); panels(); }, {passive: true});
+    }
+    panels();
+  })();
+
+  /* ================= Studio ================= */
+  (function(){
+    var canvas = document.getElementById('studioCanvas');
+    var st = null;
+    if (has3d){ try { st = makeStage(canvas, {spin: -0.5, auto: 0.003}); } catch(e){ st = null; } }
+    if (!st){ document.querySelector('.studio-stage').style.display = 'none'; return; }
+    var shoe = st.shoe;
+    var defaults = {star: 'gold', heel: 'black', laces: 'white'};
+    shoe.wear(0.35);
+    document.querySelectorAll('.swatches').forEach(function(group){
+      var target = group.dataset.target;
+      group.querySelectorAll('.sw').forEach(function(b){
+        b.addEventListener('click', function(){
+          group.querySelectorAll('.sw').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+          shoe[target](b.dataset.v);
+          if (!reduce){ st.root.scale.setScalar(1.04); setTimeout(function(){ st.root.scale.setScalar(1); }, 140); }
+        });
+      });
+    });
+    var wear = document.getElementById('wear');
+    wear.addEventListener('input', function(){ shoe.wear(wear.value / 100); });
+    function toggle(id, fn){
+      var b = document.getElementById(id);
+      b.addEventListener('click', function(){ var on = b.getAttribute('aria-pressed') !== 'true'; b.setAttribute('aria-pressed', on ? 'true' : 'false'); fn(on); });
+    }
+    var goldAnim = null;
+    toggle('addGold', function(on){
+      if (goldAnim) cancelAnimationFrame(goldAnim);
+      var start = performance.now(), from = on ? 0 : 1;
+      (function step(){ var k = clamp((performance.now() - start) / (reduce ? 1 : 1400), 0, 1); shoe.gold(on ? k : 1 - k); if (k < 1) goldAnim = requestAnimationFrame(step); })();
+    });
+    toggle('addCharms', function(on){ shoe.charms(on); });
+    toggle('addCrystals', function(on){ shoe.crystals(on); });
+    toggle('addTape', function(on){ shoe.tape(on); });
+    var msg = document.getElementById('msg');
+    function write(){ shoe.message(msg.value.trim()); }
+    msg.addEventListener('input', write);
+    if (document.fonts && document.fonts.load) document.fonts.load('60px "Permanent Marker"').then(write, write);
+    document.getElementById('resetShoe').addEventListener('click', function(){
+      document.querySelectorAll('.swatches').forEach(function(group){
+        var d = defaults[group.dataset.target];
+        group.querySelectorAll('.sw').forEach(function(x){ x.setAttribute('aria-pressed', x.dataset.v === d ? 'true' : 'false'); });
+        shoe[group.dataset.target](d);
+      });
+      ['addGold', 'addCharms', 'addCrystals', 'addTape'].forEach(function(id){ document.getElementById(id).setAttribute('aria-pressed', 'false'); });
+      shoe.gold(0); shoe.charms(false); shoe.crystals(false); shoe.tape(false);
+      wear.value = 35; shoe.wear(0.35); msg.value = ''; write();
+    });
+  })();
+
+  /* ================= Nav ================= */
+  (function(){
+    if (!hasGsap) return;
+    var nav = document.getElementById('nav');
+    ScrollTrigger.create({start: 0, end: 'max', onUpdate: function(s){ nav.classList.toggle('hide', s.direction === 1 && s.scroll() > 200); }});
+  })();
+
+  /* ================= Campaigns ================= */
+  // tilt cards
+  document.querySelectorAll('[data-tilt]').forEach(function(el){
+    if (reduce || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    el.addEventListener('pointermove', function(e){ var r = el.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; el.style.transform = 'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 10) + 'deg) translateZ(10px)'; });
+    el.addEventListener('pointerleave', function(){ el.style.transform = ''; });
+  });
+
+  // build a 3D stage only when it is about to scroll into view
+  function lazy(canvas, opts, done){
+    if (!has3d){ canvas.style.display = 'none'; return; }
+    function make(){ try { done(makeStage(canvas, opts)); } catch(e){ canvas.style.display = 'none'; } }
+    if (!('IntersectionObserver' in window)) return make();
+    var io = new IntersectionObserver(function(es){ if (es[0].isIntersecting){ io.disconnect(); make(); } }, {rootMargin: '900px 0px'});
+    io.observe(canvas);
+  }
+  // which step sits closest to the middle of the screen
+  function nearest(steps){
+    var mid = window.innerHeight * (window.innerWidth > 900 ? 0.5 : 0.78), best = 0, bd = 1e9;
+    steps.forEach(function(s, i){ var r = s.getBoundingClientRect(), d = Math.abs((r.top + r.bottom) / 2 - mid); if (d < bd){ bd = d; best = i; } });
+    return best;
+  }
+
+  /* Campaign 01: the blank sneaker gets designed, phase by phase */
+  (function(){
+    var mech = document.getElementById('mech1'), steps = Array.prototype.slice.call(mech.querySelectorAll('.step'));
+    var huds = mech.querySelectorAll('.hud'), bar = mech.querySelector('.mech-progress');
+    var st = null, cur = -1, cycle = null, goldAnim = null;
+    lazy(document.getElementById('c1Canvas'), {spin: -0.5, auto: 0.004, fit: 2.75}, function(x){ st = x; if (cur >= 0) apply(cur); });
+    var picks = {star: ['red', 'ice', 'pink', 'green', 'silver', 'glitter'], heel: ['navy', 'orange', 'goldGlitter', 'bordeaux', 'olive'], laces: ['black', 'pink', 'blue', 'gold']};
+    function counters(){
+      mech.querySelectorAll('.entry i').forEach(function(el){
+        var to = +el.dataset.v, t0 = performance.now();
+        (function step(){ var k = Math.min(1, (performance.now() - t0) / 1600); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))).toLocaleString(lang === 'it' ? 'it-IT' : 'en-US'); if (k < 1) requestAnimationFrame(step); })();
+      });
+    }
+    function goldTo(v){
+      if (!st) return; if (goldAnim) cancelAnimationFrame(goldAnim);
+      var t0 = performance.now(), from = st.shoe._g || 0;
+      (function step(){ var k = Math.min(1, (performance.now() - t0) / (reduce ? 1 : 1200)), g = from + (v - from) * k; st.shoe.gold(g); st.shoe._g = g; if (k < 1) goldAnim = requestAnimationFrame(step); })();
+    }
+    function apply(i){
+      huds.forEach(function(h, k){ h.classList.toggle('on', k === i); });
+      steps.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+      if (i === 2) counters();
+      if (!st) return;
+      var s = st.shoe; clearInterval(cycle);
+      if (i === 0){ s.blank(true); s.stars(false); s.heel('white'); s.laces('white'); s.wear(0); s.message(''); s.charms(false); s.tape(false); s.crystals(false); goldTo(0); }
+      if (i === 1){ s.blank(true); s.stars(false); s.heel('white'); s.laces('white'); s.wear(0.05); s.message(lang === 'it' ? 'la mia idea' : 'my idea'); s.charms(true); s.tape(true); s.crystals(false); goldTo(0); }
+      if (i === 2){
+        s.blank(true); s.stars(true); s.message(''); s.charms(false); s.tape(false); s.crystals(false); goldTo(0);
+        var n = 0;
+        var swap = function(){ s.star(picks.star[n % picks.star.length]); s.heel(picks.heel[n % picks.heel.length]); s.laces(picks.laces[n % picks.laces.length]); n++; };
+        swap();
+        if (!reduce) cycle = setInterval(function(){ swap(); st.root.scale.setScalar(1.04); setTimeout(function(){ st.root.scale.setScalar(1); }, 140); }, 1100);
+      }
+      if (i === 3){ s.blank(true); s.stars(true); s.star('glitter'); s.heel('goldGlitter'); s.laces('black'); s.message(''); s.charms(false); s.tape(false); s.crystals(false); s.wear(0.1); goldTo(0); }
+      if (i === 4){ s.blank(true); s.stars(true); s.star('gold'); s.heel('black'); s.laces('white'); s.wear(0.3); s.message(''); s.crystals(true); goldTo(1); }
+    }
+    function tick(){
+      var r = mech.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      var p = Math.min(1, Math.max(0, -r.top / Math.max(1, r.height - window.innerHeight)));
+      bar.style.setProperty('--p', p);
+      var i = nearest(steps); if (i !== cur){ cur = i; apply(i); }
+    }
+    window.addEventListener('scroll', tick, {passive: true}); window.addEventListener('resize', tick);
+    onLang.push(function(){ if (cur === 1 && st) st.shoe.message(lang === 'it' ? 'la mia idea' : 'my idea'); });
+    tick(); if (cur < 0) apply(0);
+  })();
+
+  /* Campaign 02: interrogation room */
+  (function(){
+    var sec = document.getElementById('c2'), hero = sec.querySelector('.c2-hero'), lineup = sec.querySelector('.lineup');
+    function marks(){
+      lineup.innerHTML = ''; var h = hero.offsetHeight;
+      for (var y = 96, cm = 200; y < h - 20; y += 96, cm -= 10){ ['', ' r'].forEach(function(c){ var s = document.createElement('span'); s.className = c.trim(); s.style.top = y + 'px'; s.textContent = cm + ' cm'; lineup.appendChild(s); }); }
+    }
+    marks(); window.addEventListener('resize', marks);
+    var type = sec.querySelector('.type');
+    if ('IntersectionObserver' in window) new IntersectionObserver(function(es){ if (es[0].isIntersecting){ type.classList.remove('go'); void type.offsetWidth; type.classList.add('go'); } }, {threshold: .35}).observe(hero);
+    else type.classList.add('go');
+    onLang.push(function(){ type.classList.remove('go'); void type.offsetWidth; type.classList.add('go'); });
+    lazy(document.getElementById('c2Canvas'), {mood: 'noir', spin: 0.4, auto: 0.0022, fit: 4.3}, function(st){
+    st.root.position.x = window.innerWidth > 900 ? 2.3 : 0;
+    st.shoe.wear(0.95); st.shoe.star('gold'); st.shoe.heel('black'); st.shoe.gold(0);
+    st.onFrame = function(now){
+      var t = reduce ? 0 : now / 1000;
+      st.spot.target.position.set(Math.sin(t * 0.7) * 0.9, -0.4, Math.cos(t * 0.5) * 0.4);
+      st.spot.intensity = 4.2 + (reduce ? 0 : Math.sin(t * 11) * Math.sin(t * 2.3) * 0.25);
+      st.offsetX = window.innerWidth > 900 ? 2.3 : 0; st.root.position.y = window.innerWidth > 900 ? 0.5 : 0.9;
+    };
+    });
+  })();
+
+  /* Campaign 03: the clean girl film */
+  (function(){
+    var film = document.getElementById('film'), steps = Array.prototype.slice.call(film.querySelectorAll('.fstep')), cur = -1;
+    var st = null;
+    lazy(document.getElementById('c3Canvas'), {spin: 0.3, auto: 0.008, fit: 1.9}, function(x){ st = x; st.tiltOn = false; st.shoe.wear(0.25); st.shoe.star('gold'); st.shoe.heel('black'); st.root.scale.setScalar(cur === 1 ? 1.15 : 1); });
+    function tick(){
+      var r = film.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) return;
+      var i = nearest(steps); if (i === cur) return; cur = i;
+      film.classList.remove('s0', 's1', 's2', 's3'); film.classList.add('s' + i);
+      steps.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+      if (st){ st.root.scale.setScalar(i === 1 ? 1.15 : 1); }
+    }
+    window.addEventListener('scroll', tick, {passive: true}); window.addEventListener('resize', tick);
+    film.classList.add('s0'); steps[0].classList.add('on'); tick();
+  })();
+
+  /* ================= Reveals ================= */
+  (function(){
+    var els = document.querySelectorAll('.rv');
+    if (reduce || !('IntersectionObserver' in window)){ els.forEach(function(e){ e.classList.add('in'); }); return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (!e.isIntersecting) return; var sib = Array.prototype.indexOf.call(e.target.parentElement.children, e.target); e.target.style.transitionDelay = (sib % 4) * 70 + 'ms'; e.target.classList.add('in'); io.unobserve(e.target); });
+    }, {rootMargin: '0px 0px -10% 0px', threshold: 0.1});
+    els.forEach(function(e){ io.observe(e); });
+  })();
+
+  var hl = (location.hash || '').slice(1).toLowerCase(), nl = (navigator.language || 'en').toLowerCase();
+  if (hl === 'it' || (hl !== 'en' && nl.indexOf('it') === 0)) setLang('it');
+})();
+</script>
+</body>
+</html>
